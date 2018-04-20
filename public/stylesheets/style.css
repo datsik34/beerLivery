@@ -1,13 +1,11 @@
-body {
-}
+body {}
 
 /* H E A D E R */
 
-.header-bar {
+header {
   height: 64px;
   width: 100%;
   overflow: hidden;
-  position: relative;
   background-color: #f7f6f6;
   position: fixed;
   -webkit-box-shadow: 0px 5px 13px 0px rgba(0, 0, 0, 0.2);
@@ -18,7 +16,7 @@ body {
 
 /* M A I N */
 
-.main {
+main .main-top {
   height: 480px;
   background: rgba(244, 144, 12, 0.85);
   background-image: radial-gradient(ellipse at 30% top, #fccd35 15%, transparent 70%);
@@ -28,19 +26,39 @@ body {
   padding: 64px;
 }
 
-.main h1 {
+main .main-top h1 {
+  margin-left: 10px;
   padding-top: 100px;
 }
 
-.address-input {
-  padding-top: 30px;
+#main-background {
+  height: 100%;
+  background-image: url('/images/beer_ice_transparent.png');
+  background-repeat: no-repeat;
+  bottom:0;
 }
 
-.address-input input {
+#search-bar {
+  width: 478px;
   height: 40px;
-  padding: 15px;
-  border: 0px;
-  width: 512px;
+}
+
+#search-button {
+  height: 40px;
+}
+
+#search-form {
+  margin-top: 25px;
+}
+
+.article {
+  border: 1px solid #e2e2e2;
+  height: 400px;
+  margin: 15px;
+}
+
+.img-article {
+  height: 230px;
 }
 
 /* F O O T E R */

@@ -9,6 +9,7 @@
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
   <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Changa" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
   <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 
@@ -19,24 +20,38 @@
     </div>
   </header>
 
-  <div class="main">
+  <main>
+    <div class="main-top">
+      <!-- <div id="main-background"></div> -->
 
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <h1>Nos bières, chez vous,<br/>dans la d'mi heure.</h1>
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h1>Nos bières, chez vous,<br/>dans la d'mi heure.</h1>
 
-          <form class="address-input">
-            <div>
-              <input class="input-btn" placeholder="Saisissez votre adresse ...">
-            </div>
-          </form>
+            <form class="form-inline" id="search-form">
+              <div class="form-group mx-sm-3 mb-2 search-bar" id="search-div">
+                <input type="text" class="form-control" id="search-bar" placeholder="Saisissez votre adresse ...">
+              </div>
+              <button type="submit" class="btn btn-primary mb-2" id="search-button">Search</button>
+            </form>
 
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="main-content">
+      <div class="container">
+        <div class="row">
+
+          
         </div>
       </div>
     </div>
-    
-  </div>
+  </main>
+
 
   <footer>
     <div class="container">
