@@ -1,0 +1,68 @@
+body {
+}
+
+/* H E A D E R */
+
+.header-bar {
+  height: 64px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  background-color: #f7f6f6;
+  position: fixed;
+  -webkit-box-shadow: 0px 5px 13px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 5px 13px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 5px 13px 0px rgba(0, 0, 0, 0.2);
+  z-index: 9;
+}
+
+/* M A I N */
+
+main {
+  height: 480px;
+  background: rgba(244, 144, 12, 0.85);
+  background-image: radial-gradient(ellipse at 30% top, #fccd35 15%, transparent 70%);
+  -webkit-box-shadow: 0px 5px 13px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 5px 13px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 5px 13px 0px rgba(0, 0, 0, 0.2);
+  padding: 64px;
+}
+
+main h1 {
+  padding-top: 100px;
+}
+
+.address-input {
+  padding-top: 30px;
+}
+
+.address-input input {
+  height: 40px;
+  padding: 15px;
+  border: 0px;
+  width: 512px;
+}
+
+/* F O O T E R */
+
+footer {
+  background-color: #2a9ad6;
+  color: white;
+  padding: 64px;
+  margin: 0px;
+  bottom: 0;
+}
+
+.ligne {
+  border-top: 1px solid white;
+  padding: 0px;
+  margin: 24px 0px 24px 0px;
+}
+
+#logo {
+  font-family: 'Changa', sans-serif;
+  font-size: 40px;
+  color: white;
+  font-style: italic;
+  font-weight: bold;
+}
