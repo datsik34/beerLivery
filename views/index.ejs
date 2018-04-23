@@ -3,12 +3,12 @@
 
 <head>
   <meta charset="utf-8">
-  <title>beerLivery - Nos bières, chez vous, dans la demi heure</title>
+  <title>beerLivery - Nos bières, chez vous, dans la d'mi heure</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
   <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=Changa" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Changa|Quicksand|Montserrat" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
   <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
@@ -17,6 +17,7 @@
 
   <header>
     <div class="header-bar">
+      <a href="/catalogue"><div class="col-12 logo">beerLivery (Go to "/catalogue")</div></a>
     </div>
   </header>
 
@@ -29,7 +30,7 @@
           <div class="col-12">
             <h1>Nos bières, chez vous,<br/>dans la d'mi heure.</h1>
 
-            <form class="form-inline" id="search-form">
+            <form class="form-inline" id="search-form" name="/search-address" method="POST">
               <div class="form-group mx-sm-3 mb-2 search-bar" id="search-div">
                 <input type="text" class="form-control" id="search-bar" placeholder="Saisissez votre adresse ...">
               </div>
@@ -45,52 +46,59 @@
     <div class="main-content">
       <div class="container">
         <div class="row">
-
-          
+          <% for (let i = 0; i < 3; i++) { %>
+            <div class="col-4">
+              <div class="pres-cards text-center">
+                <h2>Fraicheur</h2>
+                <div class="offset-1 col-10">
+                  <hr> <!-- Horizontal Rule -->
+                </div>
+                <div class="pres-cards-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, dicta, similique facere, sunt a tenetur hic tempora, fugit accusamus in aperiam porro cum consectetur itaque sint! Deleniti, soluta. Harum, non.</div>
+              </div>
+            </div>
+            <% } %>
         </div>
       </div>
     </div>
   </main>
 
-
   <footer>
     <div class="container">
       <div class="row">
-        <div class="col-12" id="logo">beerLivery</div>
+        <div class="col-12 logo">beerLivery</div>
 
         <div class="col-12 ligne"></div>
 
         <div class="col-12">
           <div class="row">
             <div class="offset-4 col-4">
-              <p>A propos de beerLivery</p>
-              <p>Devenez livreur</p>
-              <p>Devenez partenaire officiel</p>
+              <p><a href="#">A propos de beerLivery</a></p>
+              <p><a href="#">Devenez livreur</a></p>
+              <p><a href="#">Devenez partenaire officiel</a></p>
             </div>
             <div class="col-4">
-              <p>Aide</p>
-              <p>FAQ</p>
+              <p><a href="#">Aide</a></p>
+              <p><a href="#">FAQ</a></p>
             </div>
           </div>
         </div>
 
         <div class="col-12 ligne"></div>
 
-        <div class="col-12 col-centered">App soon - Come back in 2056
-        </div>
+        <div class="col-12 col-centered">App soon - Come back in 2056</div>
 
         <div class="col-12 ligne"></div>
 
         <div class="col-12">
           <div class="row">
             <div class="col-4">
-              <p>2018 beerLivery</p>
+              <p><a href="#">2018 beerLivery</a></p>
             </div>
             <div class="col-4">
-              <p>Privacy</p>
+              <p><a href="#">Privacy</a></p>
             </div>
             <div class="col-4">
-              <p>Terms</p>
+              <p><a href="#">Terms</a></p>
             </div>
           </div>
         </div>
