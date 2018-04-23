@@ -5,13 +5,16 @@ const router = express.Router();
 router.get('/', function(req, res, next) {
   const cardsData = [
     {
-      title: "Fraicheur",
+      img: "/images/icecubes.svg",
+      tag: "Fraicheur",
       data: "Une bière fraiche, c'est pas une meilleure bière ? C'est pourquoi lors de la livraison, votre bière sera toujours à bonne température, pour votre plus grand bonheur."
     }, {
-      title: "Qualité",
+      img: "/images/medal.svg",
+      tag: "Qualité",
       data: "Nous avons sélectionné pour vous le meilleur de la bière du marché."
     }, {
-      title: "Rapidité",
+      img: "/images/stopwatch.svg",
+      tag: "Rapidité",
       data: "Quoi de mieux qu'un client content ? Nous estimons que vous ne devez pas trop attendre, pour cette raison, nous nous engageons à vous livrer dans les plus brefs délais."
     }
   ];
@@ -23,7 +26,11 @@ router.get('/catalogue', function(req, res, next) {
 });
 
 router.post('/search-address', function(req, res) {
-  res.redirect('catalogue');
+  if (!req.body.address) {
+    res.redirect('/')
+  } else {
+    res.redirect('catalogue');
+  }
 });
 
 module.exports = router;
