@@ -141,6 +141,7 @@ main .main-content .pres-cards-content {
   margin: 50px 0px 30px 0px;
   padding: 10px 0px 10px 0px;
   border: 1px solid #e2e2e2;
+  background-color: white;
 }
 
 
@@ -151,6 +152,7 @@ main .main-content .pres-cards-content {
 .card-options {
   border: 1px solid #e2e2e2;
   padding: 0 0 20px 0;
+  background-color: white;
 }
 
 .card-options-right {
@@ -161,6 +163,7 @@ main .main-content .pres-cards-content {
   margin-top: 50px;
   padding: 50px 20px 20px 20px;
   border: 1px solid #e2e2e2;
+  background-color: white;
 }
 
 .ligne-card {
