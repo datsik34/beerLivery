@@ -49,11 +49,11 @@
           <% for (let i = 0; i < 3; i++) { %>
             <div class="col-4">
               <div class="pres-cards text-center">
-                <h2>Fraicheur</h2>
+                <h2><%=cardsData[i].title%></h2>
                 <div class="offset-1 col-10">
                   <hr> <!-- Horizontal Rule -->
                 </div>
-                <div class="pres-cards-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, dicta, similique facere, sunt a tenetur hic tempora, fugit accusamus in aperiam porro cum consectetur itaque sint! Deleniti, soluta. Harum, non.</div>
+                <div class="pres-cards-content"><%= cardsData[i].data%></div>
               </div>
             </div>
             <% } %>
