@@ -22,6 +22,10 @@ router.get('/catalogue', function(req, res, next) {
   res.render('catalogue');
 });
 
+router.get('/card', function(req, res, next) {
+  res.render('card');
+});
+
 router.post('/search-address', function(req, res) {
   res.redirect('catalogue');
 });
