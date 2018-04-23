@@ -28,48 +28,84 @@
       <div class="col-12">
         <h1>Votre Panier :</h1></div>
 
-        <!-- P A R T I E  A R T I C L E S -->
-      <div class="col-8">
+      <!-- P A R T I E  A R T I C L E S -->
+      <div class="col-7">
         <div class="row card-margin">
           <div class="col-12 card-items">
 
 
             <!-- L I G N E   A R T I C L E -->
             <div class="row card-oneitem">
-              <div class="col-7">Hoegarden</div>
-              <div class="col-2">-[2]+</div>
+              <div class="col-5">Hoegarden</div>
+              <div class="col-3">
+                <!-- input quantité-->
+                <div class="container-fluid card-quantity">
+                  <div class="count-input space-bottom">
+                    <a class="incr-btn" data-action="decrease" href="#">–</a>
+                    <input class="quantity" type="text" name="quantity" value="1" />
+                    <a class="incr-btn" data-action="increase" href="#">&plus;</a>
+                  </div>
+                </div>
+              </div>
               <div class="col-2">4€</div>
-              <div class="col-1"><img src="/images/img-card-trash.svg" alt="" id="imgtrash" /></div>
+              <div class="col-2"><img src="/images/img-card-trash.svg" alt="" id="imgtrash" /></div>
             </div>
             <div class="col-12 ligne-card"></div>
 
 
             <!-- L I G N E   A R T I C L E -->
             <div class="row card-oneitem">
-              <div class="col-7">Hoegarden</div>
-              <div class="col-2">-[2]+</div>
+              <div class="col-5">Hoegarden</div>
+              <div class="col-3">
+                <!-- input quantité-->
+                <div class="container-fluid card-quantity">
+                  <div class="count-input space-bottom">
+                    <a class="incr-btn" data-action="decrease" href="#">–</a>
+                    <input class="quantity" type="text" name="quantity" value="1" />
+                    <a class="incr-btn" data-action="increase" href="#">&plus;</a>
+                  </div>
+                </div>
+              </div>
               <div class="col-2">4€</div>
-              <div class="col-1"><img src="/images/img-card-trash.svg" alt="" id="imgtrash" /></div>
+              <div class="col-2"><img src="/images/img-card-trash.svg" alt="" id="imgtrash" /></div>
             </div>
             <div class="col-12 ligne-card"></div>
 
 
             <!-- L I G N E   A R T I C L E -->
             <div class="row card-oneitem">
-              <div class="col-7">Hoegarden</div>
-              <div class="col-2">-[2]+</div>
+              <div class="col-5">Hoegarden</div>
+              <div class="col-3">
+                <!-- input quantité-->
+                <div class="container-fluid card-quantity">
+                  <div class="count-input space-bottom">
+                    <a class="incr-btn" data-action="decrease" href="#">–</a>
+                    <input class="quantity" type="text" name="quantity" value="1" />
+                    <a class="incr-btn" data-action="increase" href="#">&plus;</a>
+                  </div>
+                </div>
+              </div>
               <div class="col-2">4€</div>
-              <div class="col-1"><img src="/images/img-card-trash.svg" alt="" id="imgtrash" /></div>
+              <div class="col-2"><img src="/images/img-card-trash.svg" alt="" id="imgtrash" /></div>
             </div>
             <div class="col-12 ligne-card"></div>
 
 
             <!-- L I G N E   A R T I C L E -->
             <div class="row card-oneitem">
-              <div class="col-7">Hoegarden</div>
-              <div class="col-2">-[2]+</div>
+              <div class="col-5">Hoegarden</div>
+              <div class="col-3">
+                <!-- input quantité-->
+                <div class="container-fluid card-quantity">
+                  <div class="count-input space-bottom">
+                    <a class="incr-btn" data-action="decrease" href="#">–</a>
+                    <input class="quantity" type="text" name="quantity" value="1" />
+                    <a class="incr-btn" data-action="increase" href="#">&plus;</a>
+                  </div>
+                </div>
+              </div>
               <div class="col-2">4€</div>
-              <div class="col-1"><img src="/images/img-card-trash.svg" alt="" id="imgtrash" /></div>
+              <div class="col-2"><img src="/images/img-card-trash.svg" alt="" id="imgtrash" /></div>
             </div>
           </div>
 
@@ -77,21 +113,71 @@
           <!-- P A R T I E   O P T I O N S -->
           <div class="col-10">
             <div class="row card-options">
-              <div class="col-12"> <h2>Options</h2></div>
+              <div class="col-12">
+                <h2>Options</h2></div>
               <div class="col-1"></div>
               <div class="col-10 ligne-card"></div>
-              <div class="col-12"> [x] Décapsuleur : 2€</div>
+              <div class="col-12"> <input id="checkBox-decapsuleur" type="checkbox"> Décapsuleur : 2€</div>
 
               <div class="col-6">
                 <div class="row">
-                  <div class="col-12">-[2]+ cacahuètes*</div>
-                  <div class="col-12">-[0]+ bretzels*</div>
-                  <div class="col-12">-[1]+ chips*</div>
+                  <!-- Option cacahuètes-->
+                  <div class="col-12">
+                    <div class="row">
+                      <div class="col-4 no-margin-no-padding">
+                        <div class="card-quantity">
+                          <div class="count-input space-bottom">
+                            <a class="incr-btn" data-action="decrease" href="#">–</a>
+                            <input class="quantity" type="text" name="quantity" value="1" />
+                            <a class="incr-btn" data-action="increase" href="#">&plus;</a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-8 no-margin-no-padding">
+                        <span>cacahuètes*</span>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Option bretzels-->
+                  <div class="col-12">
+                    <div class="row">
+                      <div class="col-4 no-margin-no-padding">
+                        <div class="card-quantity">
+                          <div class="count-input space-bottom">
+                            <a class="incr-btn" data-action="decrease" href="#">–</a>
+                            <input class="quantity" type="text" name="quantity" value="1" />
+                            <a class="incr-btn" data-action="increase" href="#">&plus;</a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-8 no-margin-no-padding">
+                        <span>bretzels*</span>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Option chips-->
+                  <div class="col-12">
+                    <div class="row">
+                      <div class="col-4 no-margin-no-padding">
+                        <div class="card-quantity">
+                          <div class="count-input space-bottom">
+                            <a class="incr-btn" data-action="decrease" href="#">–</a>
+                            <input class="quantity" type="text" name="quantity" value="1" />
+                            <a class="incr-btn" data-action="increase" href="#">&plus;</a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-8 no-margin-no-padding">
+                        <span>chips*</span>
+                      </div>
+                    </div>
+                  </div>
+
                 </div>
               </div>
 
               <div class="col-6">
-                <p>+1€ unité</p>
+                <h2>+1€ unité</h2>
                 <p>*portion : 40g env.</p>
               </div>
 
@@ -100,23 +186,32 @@
         </div>
       </div>
       <!-- P A R T I E   R E S U M E  -->
-      <div class="col-4">
+      <div class="col-5">
         <div class="row card-resume">
           <div class="offset-6 col-6"><img src="/images/img-card-packbox.svg" alt="" id="imgpackbox" /></div>
-          <div class="col-8">Estimation livraison :</div>
-          <div class="col-4">30 minutes</div>
 
-          <div class="col-8">Prix :</div>
-          <div class="col-4">12€</div>
 
-          <div class="col-8">Livreur :</div>
-          <div class="col-4">1.5€</div>
+          <div class="col-8">
+            <div class="row">
+              <div class="col-12"><p>Estimation livraison :</p></div>
+              <div class="col-12"><p>Prix :</p></div>
+              <div class="col-12"><p>Livreur :</p></div>
+              <div class="col-12"><p>Options :</p></div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="row card-options-right">
+              <div class="col-12"><p>30 minutes</p></div>
+              <div class="col-12"><p>12€</p></div>
+              <div class="col-12"><p>1.5€</p></div>
+              <div class="col-12"><p>3€</p></div>
+            </div>
+          </div>
 
-          <div class="col-8">Options :</div>
-          <div class="col-4">3€</div>
+          <div class="col-12 ligne-card"></div>
 
-          <div class="col-8">Prix Total :</div>
-          <div class="col-4">20€</div>
+          <div class="col-8"><p>Prix Total :</p></div>
+          <div class="col-4 card-options-right"><p>20€</p></div>
 
         </div>
 
@@ -125,9 +220,11 @@
         </div>
       </div>
     </div>
+
+    <div id="card-footer"><p>© 2018 beerLivery Inc. Privacy Terms</p></div>
   </div>
 
-
+  <script src="/javascripts/script.js"></script>
 </body>
 
 </html>
