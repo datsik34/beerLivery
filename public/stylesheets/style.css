@@ -8,25 +8,38 @@ header {
   overflow: hidden;
   background-color: #f7f6f6;
   position: fixed;
-  -webkit-box-shadow: 0px 5px 13px 0px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0px 5px 13px 0px rgba(0, 0, 0, 0.2);
-  box-shadow: 0px 5px 13px 0px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 5px 13px 0 rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 5px 13px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 13px 0 rgba(0, 0, 0, 0.2);
   z-index: 9;
 }
 
-/* M A I N */
+header .logo {
+  font-family: 'Changa', sans-serif;
+  font-size: 40px;
+  color: #2a9ad6;
+  font-style: italic;
+  font-weight: bold;
+}
+
+header a:hover {
+  text-decoration: none;
+}
+
+/* M A I N   T O P*/
 
 main .main-top {
   height: 480px;
+  padding: 64px;
   background: rgba(244, 144, 12, 0.85);
   background-image: radial-gradient(ellipse at 30% top, #fccd35 15%, transparent 70%);
-  -webkit-box-shadow: 0px 5px 13px 0px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0px 5px 13px 0px rgba(0, 0, 0, 0.2);
-  box-shadow: 0px 5px 13px 0px rgba(0, 0, 0, 0.2);
-  padding: 64px;
+  -webkit-box-shadow: 0 5px 13px 0 rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 5px 13px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 13px 0 rgba(0, 0, 0, 0.2);
 }
 
 main .main-top h1 {
+  font-family: 'Montserrat', sans-serif;
   margin-left: 10px;
   padding-top: 100px;
 }
@@ -35,7 +48,7 @@ main .main-top h1 {
   height: 100%;
   background-image: url('/images/beer_ice_transparent.png');
   background-repeat: no-repeat;
-  bottom:0;
+  bottom: 0;
 }
 
 #search-bar {
@@ -51,19 +64,8 @@ main .main-top h1 {
   margin-top: 25px;
 }
 
-.article {
-  border: 1px solid #e2e2e2;
-  height: 400px;
-  margin: 15px;
-}
-
-.img-article {
-  height: 230px;
-}
-
 #background-articles {
-  padding: 100px 0px 50px 0px;
-  text-align: center;
+  padding: 100px 0 50px 0;
 }
 
 .article {
@@ -74,25 +76,63 @@ main .main-top h1 {
 
 .img-article {
   height: 230px;
-  margin: 40px 0px 20px 0px;
+  margin: 40px 0 20px 0;
 }
+
+/* M A I N   C O N T E N T */
+
+main .main-content {
+  height: 400px;
+  background-color: #f7f6f6;
+}
+
+main .pres-cards {
+  border: 1px solid #e2e2e2;
+  height: 300px;
+  margin: 50px 15px 50px 15px;
+}
+
+main .main-content h2 {
+  font-family: 'Quicksand', sans-serif;
+  margin: 30px 0 20px 0;
+}
+
+hr {
+  margin: 7px;
+  border-color: #e2e2e2;
+}
+
+main .main-content .pres-cards-content {
+  height: 214px;
+  margin: 0;
+  padding: 25px;
+}
+
 /* F O O T E R */
 
 footer {
   background-color: #2a9ad6;
   color: white;
   padding: 64px;
-  margin: 0px;
+  margin: 0;
   bottom: 0;
+}
+
+footer a {
+  color: white;
+}
+
+footer a:hover {
+  color: #f0c333;
 }
 
 .ligne {
   border-top: 1px solid white;
-  padding: 0px;
-  margin: 24px 0px 24px 0px;
+  padding: 0;
+  margin: 24px 0 24px;
 }
 
-#logo {
+footer .logo {
   font-family: 'Changa', sans-serif;
   font-size: 40px;
   color: white;
