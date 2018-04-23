@@ -22,7 +22,7 @@ header .logo {
   font-weight: bold;
 }
 
-header a:hover {
+header a:link, header a:visited, header a:hover, header a:active {
   text-decoration: none;
 }
 
@@ -40,7 +40,7 @@ main .main-top {
 
 main .main-top h1 {
   font-family: 'Montserrat', sans-serif;
-  margin-left: 10px;
+  margin-left: 0;
   padding-top: 100px;
 }
 
@@ -49,6 +49,10 @@ main .main-top h1 {
   background-image: url('/images/beer_ice_transparent.png');
   background-repeat: no-repeat;
   bottom: 0;
+}
+
+#search-div {
+  padding-right: 5px;
 }
 
 #search-bar {
@@ -89,7 +93,8 @@ main .main-content {
 main .pres-cards {
   border: 1px solid #e2e2e2;
   height: 300px;
-  margin: 50px 15px 50px 15px;
+  margin: 50px 0 50px 0;
+  justify-content: center;
 }
 
 main .main-content h2 {
