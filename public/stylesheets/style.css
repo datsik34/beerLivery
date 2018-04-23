@@ -147,17 +147,3 @@ footer .logo {
 }
 
 /* T E S T */
-
-.br-theme-bars-reversed .br-widget a {
-  background-color: pink;
-}
-
-.br-theme-bars-reversed .br-widget a.br-active,
-.br-theme-bars-reversed .br-widget a.br-selected {
-  background-color: #ff446a;
-}
-
-.br-theme-bars-reversed .br-widget .br-current-rating {
-  color: #ff446a;
-  font-size: 20px;
-}
