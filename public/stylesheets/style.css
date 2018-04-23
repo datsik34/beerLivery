@@ -61,6 +61,21 @@ main .main-top h1 {
   height: 230px;
 }
 
+#background-articles {
+  padding: 100px 0px 50px 0px;
+  text-align: center;
+}
+
+.article {
+  border: 1px solid #e2e2e2;
+  height: 400px;
+  margin: 15px;
+}
+
+.img-article {
+  height: 230px;
+  margin: 40px 0px 20px 0px;
+}
 /* F O O T E R */
 
 footer {
