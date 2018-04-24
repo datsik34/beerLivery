@@ -3,7 +3,7 @@ const router = express.Router();
 const stripe = require('stripe')('sk_test_uazSXLD1OuOgwsSwf6r93K8S');
 const mongoose = require('mongoose');
 
-const optionsData = [
+var optionsData = [
   {
     name: "Cacahuètes",
     quantity: 0
@@ -53,8 +53,8 @@ router.post('/search-address', function(req, res) {
 });
 
 router.post('/checkout', function(req, res) {
-  var totalCmd = 0;
-  for (var i = 0; i < req.session.dataCardBeer.length; i++) {
+  let totalCmd = 0;
+  for (let i = 0; i < req.session.dataCardBeer.length; i++) {
     req.session.dataCardBeer[i].total = req.session.dataCardBeer[i].price * req.session.dataCardBeer[i].quantity;
     totalCmd += req.session.dataCardBeer[i].total * 100;
   }
