@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const stripe = require('stripe')('sk_test_uazSXLD1OuOgwsSwf6r93K8S');
-const mongoose = requise('mongoose');
+const mongoose = require('mongoose');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -38,6 +38,21 @@ router.post('/search-address', function(req, res) {
     console.log(req.body.address);
     res.redirect('catalogue');
   }
+});
+
+router.post('/card', function(req, res) {
+  stripe.customers.create({
+    email: req.body.stripeEmail,
+    source: req.body.stripeToken
+  })
+  .then(customer =>
+  stripe.charges.create({
+    amount: totalCmd,
+    description: "Sample Charge",
+    currency: "eur",
+    customer: customer.id
+  }))
+  .then(charge => res.render('card', { dataCardBike: req.session.dataCardBike }));
 });
 
 module.exports = router;
