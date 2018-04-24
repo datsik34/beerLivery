@@ -6,13 +6,16 @@ const mongoose = require('mongoose');
 var optionsData = [
   {
     name: "Cacahuètes",
-    quantity: 0
+    quantity: 0,
+    price: 1
   }, {
     name: "Bretzels",
-    quantity: 0
+    quantity: 0,
+    price: 1
   }, {
     name: "Chips",
-    quantity: 0
+    quantity: 0,
+    price: 1
   }
 ];
 
