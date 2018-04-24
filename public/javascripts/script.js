@@ -20,7 +20,9 @@ $(".incr-btn").on("click", function (e) {
 function findAddress() {
   var input = document.getElementById('search-bar');
   var options = {
-    types: ['geocode']
+    types: ['geocode'],
+    types: ['(cities)'],
+      componentRestrictions: { country: "fr" }
   };
   autocomplete = new google.maps.places.Autocomplete(input, options);
 }

@@ -40,6 +40,7 @@
 
 
             <!-- L I G N E   A R T I C L E -->
+            <% for (let i = 0; i < 4; i++) { %>
             <div class="row card-oneitem">
               <div class="col-5">Hoegarden</div>
               <div class="col-3">
@@ -53,65 +54,12 @@
                 </div>
               </div>
               <div class="col-2">4€</div>
-              <div class="col-2"><img src="/images/img-card-trash.svg" alt="" id="imgtrash" /></div>
+              <div class="col-2"><img src="/images/img-card-trash.svg" class="imgtrash" /></div>
             </div>
+            <% if (i < 4-1) { %>
             <div class="col-12 ligne-card"></div>
-
-
-            <!-- L I G N E   A R T I C L E -->
-            <div class="row card-oneitem">
-              <div class="col-5">Hoegarden</div>
-              <div class="col-3">
-                <!-- input quantité-->
-                <div class="container-fluid card-quantity">
-                  <div class="count-input space-bottom">
-                    <a class="incr-btn" data-action="decrease" href="#">–</a>
-                    <input class="quantity" type="text" name="quantity" value="1" />
-                    <a class="incr-btn" data-action="increase" href="#">&plus;</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-2">4€</div>
-              <div class="col-2"><img src="/images/img-card-trash.svg" alt="" id="imgtrash" /></div>
-            </div>
-            <div class="col-12 ligne-card"></div>
-
-
-            <!-- L I G N E   A R T I C L E -->
-            <div class="row card-oneitem">
-              <div class="col-5">Hoegarden</div>
-              <div class="col-3">
-                <!-- input quantité-->
-                <div class="container-fluid card-quantity">
-                  <div class="count-input space-bottom">
-                    <a class="incr-btn" data-action="decrease" href="#">–</a>
-                    <input class="quantity" type="text" name="quantity" value="1" />
-                    <a class="incr-btn" data-action="increase" href="#">&plus;</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-2">4€</div>
-              <div class="col-2"><img src="/images/img-card-trash.svg" alt="" id="imgtrash" /></div>
-            </div>
-            <div class="col-12 ligne-card"></div>
-
-
-            <!-- L I G N E   A R T I C L E -->
-            <div class="row card-oneitem">
-              <div class="col-5">Hoegarden</div>
-              <div class="col-3">
-                <!-- input quantité-->
-                <div class="container-fluid card-quantity">
-                  <div class="count-input space-bottom">
-                    <a class="incr-btn" data-action="decrease" href="#">–</a>
-                    <input class="quantity" type="text" name="quantity" value="1" />
-                    <a class="incr-btn" data-action="increase" href="#">&plus;</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-2">4€</div>
-              <div class="col-2"><img src="/images/img-card-trash.svg" alt="" id="imgtrash" /></div>
-            </div>
+            <% }
+            } %>
           </div>
 
 
@@ -128,6 +76,7 @@
               <div class="col-6">
                 <div class="row">
                   <!-- Option cacahuètes-->
+                  <% for (let i = 0; i < optionsData.length; i++) {%>
                   <div class="col-12">
                     <div class="row">
                       <div class="col-4 no-margin-no-padding">
@@ -140,44 +89,11 @@
                         </div>
                       </div>
                       <div class="col-8 no-margin-no-padding">
-                        <span>cacahuètes*</span>
+                        <span><%=optionsData[i].name%></span>
                       </div>
                     </div>
                   </div>
-                  <!-- Option bretzels-->
-                  <div class="col-12">
-                    <div class="row">
-                      <div class="col-4 no-margin-no-padding">
-                        <div class="card-quantity">
-                          <div class="count-input space-bottom">
-                            <a class="incr-btn" data-action="decrease" href="#">–</a>
-                            <input class="quantity" type="text" name="quantity" value="1" />
-                            <a class="incr-btn" data-action="increase" href="#">&plus;</a>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-8 no-margin-no-padding">
-                        <span>bretzels*</span>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Option chips-->
-                  <div class="col-12">
-                    <div class="row">
-                      <div class="col-4 no-margin-no-padding">
-                        <div class="card-quantity">
-                          <div class="count-input space-bottom">
-                            <a class="incr-btn" data-action="decrease" href="#">–</a>
-                            <input class="quantity" type="text" name="quantity" value="1" />
-                            <a class="incr-btn" data-action="increase" href="#">&plus;</a>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-8 no-margin-no-padding">
-                        <span>chips*</span>
-                      </div>
-                    </div>
-                  </div>
+                  <% } %>
 
                 </div>
               </div>
@@ -223,7 +139,20 @@
         </div>
 
         <div class="row">
-          <div class="offset-8 col-4"><button type="submit" class="btn btn-warning btn-lg" id="card-btn-buy">Payer</button></div>
+          <div class="offset-8 col-4">
+            <form action="/checkout" method="POST">
+              <script
+                src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                data-key="pk_test_IZAko0n3TcNJBDruN4iZ5pYP"
+                data-amount="999"
+                data-name="beerLivery"
+                data-description="X bières pour un montant de Y"
+                data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                data-locale="auto"
+                data-currency="eur">
+              </script>
+            </form>
+          </div>
         </div>
       </div>
     </div>
