@@ -1,4 +1,7 @@
-body {}
+body {
+  padding: 0px;
+  margin: 0px;
+}
 
 /* H E A D E R */
 
@@ -32,7 +35,7 @@ main .main-top {
   height: 480px;
   padding: 64px;
   background: rgba(244, 144, 12, 0.85);
-  background-image: radial-gradient(ellipse at 30% top, #fccd35 15%, transparent 70%);
+  background-image: radial-gradient(ellipse at 30% top, #fccd35 15%, rgba(244, 144, 12, 0.85) 70%);
   -webkit-box-shadow: 0 5px 13px 0 rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0 5px 13px 0 rgba(0, 0, 0, 0.2);
   box-shadow: 0 5px 13px 0 rgba(0, 0, 0, 0.2);
@@ -42,6 +45,7 @@ main .main-top h1 {
   font-family: 'Montserrat', sans-serif;
   margin-left: 0;
   padding-top: 100px;
+  font-weight: bold;
 }
 
 h2 {
@@ -97,6 +101,7 @@ main .main-content {
 }
 
 main .pres-cards {
+  background-color: #ffffff;
   border: 1px solid #e2e2e2;
   height: 300px;
   margin: 50px 0 50px 0;
@@ -116,7 +121,7 @@ hr {
 main .main-content .pres-cards-content {
   height: 214px;
   margin: 0 30px 0 30px;
-  padding: 25px;
+  padding: 10px 15px 15px 15px;
   font-size: 16px;
 }
 
@@ -244,6 +249,14 @@ main .main-content .pres-cards-content {
 .count-input.count-input-lg input {
   height: 70px;
   border-radius: 3px;
+
+main .main-content .pres-cards-img {
+  height: 72px;
+  margin-top: 20px;
+}
+
+main .main-content h3 {
+  margin: 15px 0 0 0;
 }
 
 /* F O O T E R */
@@ -277,3 +290,5 @@ footer .logo {
   font-style: italic;
   font-weight: bold;
 }
+
+/* T E S T */
