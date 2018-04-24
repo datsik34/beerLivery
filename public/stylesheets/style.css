@@ -1,6 +1,7 @@
 body {
   padding: 0;
   margin: 0;
+  background-color: #f7f6f6;
 }
 
 /* H E A D E R */
@@ -27,6 +28,12 @@ header .logo {
 
 header a:link, header a:visited, header a:hover, header a:active {
   text-decoration: none;
+}
+
+header .card-icon img {
+  width: 85px;
+  margin-top: 14px;
+  margin-bottom: 14px;
 }
 
 /* M A I N   T O P*/
