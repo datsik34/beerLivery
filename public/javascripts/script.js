@@ -21,8 +21,7 @@ function findAddress() {
   var input = document.getElementById('search-bar');
   var options = {
     types: ['geocode'],
-    types: ['(cities)'],
-      componentRestrictions: { country: "fr" }
+    componentRestrictions: { country: "fr" }
   };
   autocomplete = new google.maps.places.Autocomplete(input, options);
 }
