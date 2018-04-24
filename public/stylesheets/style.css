@@ -161,8 +161,8 @@ main .main-content .pres-cards-content {
 }
 
 .card-items {
-  margin: 30px 0px 30px 0px;
-  padding: 10px 0px 10px 0px;
+  margin: 30px 0 30px 0;
+  padding: 10px 0 10px 0;
 
   border: 1px solid #e2e2e2;
   background-color: white;
@@ -194,7 +194,7 @@ main .main-content .pres-cards-content {
   margin: 10px 0 10px 0;
 }
 
-#imgtrash {
+.imgtrash {
   width: 25px;
 }
 

@@ -3,8 +3,24 @@ const router = express.Router();
 const stripe = require('stripe')('sk_test_uazSXLD1OuOgwsSwf6r93K8S');
 const mongoose = require('mongoose');
 
+const optionsData = [
+  {
+    name: "Cacahuètes",
+    quantity: 0
+  }, {
+    name: "Bretzels",
+    quantity: 0
+  }, {
+    name: "Chips",
+    quantity: 0
+  }
+];
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
+  if (!req.session.dataCardBeer) {
+    req.session.dataCardBeer = [];
+  }
   const cardsData = [
     {
       img: "/images/icecubes.svg",
@@ -28,7 +44,7 @@ router.get('/catalogue', function(req, res, next) {
 });
 
 router.get('/card', function(req, res, next) {
-  res.render('card');
+  res.render('card', {optionsData});
 });
 
 router.post('/search-address', function(req, res) {
@@ -40,7 +56,13 @@ router.post('/search-address', function(req, res) {
   }
 });
 
-router.post('/card', function(req, res) {
+router.post('/checkout', function(req, res) {
+  var totalCmd = 0;
+  for (var i = 0; i < req.session.dataCardBeer.length; i++) {
+    req.session.dataCardBeer[i].total = req.session.dataCardBeer[i].price * req.session.dataCardBeer[i].quantity;
+    totalCmd += req.session.dataCardBeer[i].total * 100;
+  }
+
   stripe.customers.create({
     email: req.body.stripeEmail,
     source: req.body.stripeToken
@@ -52,7 +74,7 @@ router.post('/card', function(req, res) {
     currency: "eur",
     customer: customer.id
   }))
-  .then(charge => res.render('card', { dataCardBike: req.session.dataCardBike }));
+  .then(charge => res.redirect('card'));
 });
 
 module.exports = router;
