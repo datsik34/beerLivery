@@ -16,3 +16,11 @@ $(".incr-btn").on("click", function (e) {
     $button.parent().find('.quantity').val(newVal);
     e.preventDefault();
 });
+
+function findAddress() {
+  var input = document.getElementById('search-bar');
+  var options = {
+    types: ['geocode']
+  };
+  autocomplete = new google.maps.places.Autocomplete(input, options);
+}
