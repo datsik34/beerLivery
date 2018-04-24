@@ -1,5 +1,7 @@
 const express = require('express');
 const router = express.Router();
+const stripe = require('stripe')('sk_test_uazSXLD1OuOgwsSwf6r93K8S');
+const mongoose = requise('mongoose');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
