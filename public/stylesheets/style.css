@@ -125,15 +125,24 @@ main .main-content .pres-cards-content {
   font-size: 16px;
 }
 
-/* C A R D */
+                            /*********************************/
+/************************************** C  A  R  D  ***********************************/
 
 .no-margin-no-padding {
   padding: 0;
   margin: 0;
 }
 
+#card-background {
+  width: 100%;
+  height: 480px;
+  position: absolute;
+  background: rgba(244, 144, 12, 0.85);
+  background-image: radial-gradient(ellipse at 30% top, #fccd35 15%, transparent 70%);
+}
+
 .main-card {
-  padding-top: 100px;
+  padding-top: 130px;
   font-size: 16px;
 }
 
@@ -142,8 +151,9 @@ main .main-content .pres-cards-content {
 }
 
 .card-items {
-  margin: 50px0 30px0;
-  padding: 10px0 10px0;
+  margin: 30px 0px 30px 0px;
+  padding: 10px 0px 10px 0px;
+
   border: 1px solid #e2e2e2;
   background-color: white;
 }
@@ -163,7 +173,7 @@ main .main-content .pres-cards-content {
 }
 
 .card-resume {
-  margin-top: 50px;
+  margin-top: 30px;
   padding: 50px 20px 20px 20px;
   border: 1px solid #e2e2e2;
   background-color: white;
@@ -178,6 +188,10 @@ main .main-content .pres-cards-content {
   width: 25px;
 }
 
+#checkBox-decapsuleur {
+  margin: 20px 0 30px 0;
+}
+
 #imgpackbox {
   width: 100px;
   padding: 0 0 30px 0;
@@ -186,6 +200,7 @@ main .main-content .pres-cards-content {
 #card-btn-buy {
   margin-top: 20px;
   width: 100%;
+  background-color: #F5A338;
 }
 
 #card-footer {
