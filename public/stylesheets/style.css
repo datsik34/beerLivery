@@ -42,7 +42,11 @@ main .main-top {
   height: 480px;
   padding: 64px;
   background: rgba(244, 144, 12, 0.85);
-  background-image: radial-gradient(ellipse at 30% top, #fccd35 15%, rgba(244, 144, 12, 0.85) 70%);
+  background-image: url("/images/beer_ice_transparent.png"), radial-gradient(ellipse at 30% top, #fccd35 15%, rgba(244, 144, 12, 0.85) 70%);
+  background-repeat: no-repeat, no-repeat;
+  background-position: right 25% bottom;
+  background-size: 500px, auto;
+
   -webkit-box-shadow: 0 5px 13px 0 rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0 5px 13px 0 rgba(0, 0, 0, 0.2);
   box-shadow: 0 5px 13px 0 rgba(0, 0, 0, 0.2);
@@ -58,13 +62,6 @@ main .main-top h1 {
 h2 {
   font-family: 'Montserrat', sans-serif;
   font-size: 28px;
-}
-
-#main-background {
-  height: 100%;
-  background-image: url('/images/beer_ice_transparent.png');
-  background-repeat: no-repeat;
-  bottom: 0;
 }
 
 #search-div {
@@ -87,6 +84,12 @@ h2 {
 #background-articles {
   padding: 100px 0 50px 0;
 }
+
+#index-background-img-beers {
+  width: 550px;
+
+}
+
 
 .article {
   border: 1px solid #e2e2e2;
@@ -133,7 +136,7 @@ main .main-content .pres-cards-content {
 }
 
                             /*********************************/
-/************************************** C  A  R  D  ***********************************/
+/************************************** C  A  R  D  **************************************/
 
 .no-margin-no-padding {
   padding: 0;
