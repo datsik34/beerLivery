@@ -51,8 +51,8 @@ main .main-top h1 {
 h2 {
   font-family: 'Montserrat', sans-serif;
   font-size: 28px;
-
 }
+
 #main-background {
   height: 100%;
   background-image: url('/images/beer_ice_transparent.png');
@@ -132,7 +132,6 @@ main .main-content .pres-cards-content {
   margin: 0px;
 }
 
-
 .main-card {
   padding-top: 100px;
   font-size: 16px;
@@ -148,7 +147,6 @@ main .main-content .pres-cards-content {
   border: 1px solid #e2e2e2;
   background-color: white;
 }
-
 
 .card-oneitem {
   padding: 0 0 0 10px;
@@ -191,11 +189,12 @@ main .main-content .pres-cards-content {
 }
 
 #card-footer {
-  position:absolute;
-  bottom:0;
+  position: absolute;
+  bottom: 0;
 }
 
 /* input quantité*/
+
 .count-input {
   position: relative;
   width: 100%;
@@ -215,9 +214,11 @@ main .main-content .pres-cards-content {
   text-align: center;
   /*font-size: 20px;*/
 }
+
 .count-input input:focus {
   outline: none;
 }
+
 .count-input .incr-btn {
   display: block;
   position: absolute;
@@ -230,22 +231,27 @@ main .main-content .pres-cards-content {
   top: 50%;
   right: 0;
   margin-top: -15px;
-  text-decoration:none;
+  text-decoration: none;
 }
+
 .count-input .incr-btn:first-child {
   right: auto;
   left: 0;
   top: 46%;
 }
+
 .count-input.count-input-sm {
   max-width: 125px;
 }
+
 .count-input.count-input-sm input {
   height: 36px;
 }
+
 .count-input.count-input-lg {
   max-width: 200px;
 }
+
 .count-input.count-input-lg input {
   height: 70px;
   border-radius: 3px;
