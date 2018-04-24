@@ -33,6 +33,7 @@ router.post('/search-address', function(req, res) {
   if (!req.body.address) {
     res.redirect('/')
   } else {
+    console.log(req.body.address);
     res.redirect('catalogue');
   }
 });
