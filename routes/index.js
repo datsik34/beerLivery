@@ -21,10 +21,6 @@ router.get('/', function(req, res, next) {
   res.render('index', {cardsData});
 });
 
-router.get('/catalogue', function(req, res, next) {
-  res.render('catalogue');
-});
-
 router.get('/card', function(req, res, next) {
   res.render('card');
 });
