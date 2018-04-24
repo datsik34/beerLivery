@@ -23,11 +23,16 @@ var beerSchema = mongoose.Schema({
 var beerModel = mongoose.model('databeers', beerSchema);
 
 router.get('/', function(req, res, next) {
-  console.log("kikou");
   beerModel.find(
     function(err, databeers){
-      console.log(err);
-      console.log(databeers);
+      res.render('catalogue', {beerList: databeers});
+    });
+});
+
+router.post('/add-card', function(req, res, next){
+  beerModel.find(
+    function(err, databeers){
+      console.log(req.body);
       res.render('catalogue', {beerList: databeers});
     });
 });
