@@ -17,7 +17,9 @@
 
   <header>
     <div class="header-bar">
-      <a href="/catalogue"><div class="col-12 logo">beerLivery (Go to "/catalogue")</div></a>
+      <a href="/catalogue">
+        <div class="col-12 logo">beerLivery (Go to "/catalogue")</div>
+      </a>
     </div>
   </header>
 
@@ -31,7 +33,7 @@
 
             <form class="form-inline" id="search-form" action="/search-address" method="POST">
               <div class="form-group mb-2 search-bar" id="search-div">
-                <input type="text" class="form-control" id="search-bar" placeholder="Saisissez votre adresse ...">
+                <input type="text" name="address" class="form-control" id="search-bar" placeholder="Saisissez votre adresse ...">
               </div>
               <button type="submit" class="btn btn-primary mb-2" id="search-button">Search</button>
             </form>
@@ -45,14 +47,18 @@
     <div class="main-content">
       <div class="container">
         <div class="row">
-          <% for (let i = 0; i < 3; i++) { %>
+          <% for (let i = 0; i < cardsData.length; i++) { %>
             <div class="col-4">
               <div class="pres-cards text-center">
-                <h2><%=cardsData[i].title%></h2>
+                <img class="pres-cards-img" src="<%=cardsData[i].img%>">
                 <div class="offset-1 col-10">
-                  <hr> <!-- Horizontal Rule -->
+                  <hr>
+                  <!-- Horizontal Rule -->
                 </div>
-                <div class="pres-cards-content"><%= cardsData[i].data%></div>
+                <h3><%= cardsData[i].tag%></h3>
+                <div class="pres-cards-content">
+                  <%= cardsData[i].data%>
+                </div>
               </div>
             </div>
             <% } %>
