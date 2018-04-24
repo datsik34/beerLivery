@@ -29,16 +29,16 @@
 
   <div class="container text-center" id="background-articles">
     <div class="row">
-      <% for (let i = 0; i < 6; i++) { %>
+      <% for (var i = 0; i < beerList.length; i++) { %>
         <div class="col-4">
           <div class="article">
-            <img src="/images/beer1.png" alt="" class="img-article">
+            <img src="https://img.saveur-biere.com/img/p/<%=beerList[i].image%>" alt="" class="img-article">
             <div class="offset-1 col-10">
               <hr>
               <!-- Horizontal Rule -->
             </div>
-            <p>Leo - Blonde</p>
-            <p>Thailande</p>
+            <p><%=beerList[i].name%></p>
+            <p><%=beerList[i].type%></p>
             <select id="example">
               <% for (let j = 0; j < 12; j++) {%>
                 <option name="beerQuantity" value="<%=j+1%>"><%=j+1%></option>
