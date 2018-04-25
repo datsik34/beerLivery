@@ -28,6 +28,24 @@
   <div id="card-background">
   </div>
   <div class="container main-card">
+
+
+    <!-- P A N I E R   V I D E -->
+    <%
+    if (!cardbeer.length || cardbeer.length < 1){
+    %>
+    <div class="row">
+      <div class="offset-3 col-6" id="card-empty">
+        <h3>Oups ! Ton panier est vide !</h3>
+        <a href="/catalogue"><img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/b14dfb26314443.563540ca9b029.gif" id="card-img-empty" alt=""></a>
+        <h3>Notre livreur est parti sans bières.</h3>
+        <div><a href="/catalogue"><h3>Retouner vers le catalogue</h3></a></div>
+      </div>
+    </div>
+    <%
+    } else {
+    %>
+
     <div class="row">
       <div class="col-12">
         <h1>Votre Panier :</h1>
@@ -179,6 +197,13 @@
         </div>
       </div>
     </div>
+
+    <%
+    }
+    %>
+
+
+
     <div id="card-footer">
       <p>© 2018 beerLivery Inc. Privacy Terms</p>
     </div>
