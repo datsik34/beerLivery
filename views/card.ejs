@@ -28,6 +28,24 @@
   <div id="card-background">
   </div>
   <div class="container main-card">
+
+
+    <!-- P A N I E R   V I D E -->
+    <%
+    if (!cardbeer.length || cardbeer.length < 1){
+    %>
+    <div class="row">
+      <div class="offset-3 col-6" id="card-empty">
+        <h3>Oups ! Ton panier est vide !</h3>
+        <a href="/catalogue"><img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/b14dfb26314443.563540ca9b029.gif" id="card-img-empty" alt=""></a>
+        <h3>Notre livreur est parti sans bières.</h3>
+        <div><a href="/catalogue"><h3>Retouner vers le catalogue</h3></a></div>
+      </div>
+    </div>
+    <%
+    } else {
+    %>
+
     <div class="row">
       <div class="col-12">
         <h1>Votre Panier :</h1>
@@ -38,9 +56,12 @@
         <div class="row card-margin">
           <div class="col-12 card-items">
 
-
             <!-- L I G N E   A R T I C L E -->
-            <% for (let i = 0; i < cardbeer.length; i++) { %>
+            <%
+            var totalBeers = 0;
+            for (let i = 0; i < cardbeer.length; i++) {
+              totalBeers += cardbeer[i].price * cardbeer[i].quantity;
+              %>
               <div class="row card-oneitem">
                 <div class="col-5">
                   <%=cardbeer[i].name%>
@@ -51,20 +72,20 @@
                     <div class="count-input space-bottom">
                       <a class="incr-btn" data-action="decrease" href="#">–</a>
                       <input class="quantity" type="text" name="quantity" value="<%=cardbeer[i].quantity%>" />
+                      <input type="hidden" name="position" value="<%=i%>">
                       <a class="incr-btn" data-action="increase" href="#">&plus;</a>
                     </div>
                   </div>
                 </div>
                 <div class="col-2">
                   <%=cardbeer[i].price%>€</div>
-                <div class="col-2"><img src="/images/img-card-trash.svg" class="imgtrash" /></div>
+                <a href="/card/delete-card?position=<%=i%>" class="col-2"><img src="/images/img-card-trash.svg" class="imgtrash" /></a>
               </div>
               <% if (i < cardbeer.length - 1) { %>
                 <div class="col-12 ligne-card"></div>
                 <% }
             } %>
           </div>
-
 
           <!-- P A R T I E   O P T I O N S -->
           <div class="col-10">
@@ -79,15 +100,19 @@
               <div class="col-6">
                 <div class="row">
                   <!-- Option cacahuètes-->
-                  <% for (let i = 0; i < optionsData.length; i++) {%>
+                  <%
+                  var totalOptions = 0;
+                  for (let i = 0; i < optionsData.length; i++) {
+                    totalOptions += optionsData[i].quantity * optionsData[i].price;
+                    %>
                     <div class="col-12">
                       <div class="row">
                         <div class="col-4 no-margin-no-padding">
                           <div class="card-quantity">
                             <div class="count-input space-bottom">
-                              <a class="incr-btn" data-action="decrease" href="#">–</a>
-                              <input class="quantity" type="text" name="quantity" value="1" />
-                              <a class="incr-btn" data-action="increase" href="#">&plus;</a>
+                              <a class="incr-btn-options" data-action="decrease" href="#">–</a>
+                              <input class="quantity" type="text" name="quantity" value="<%=optionsData[i].quantity%>" />
+                              <a class="incr-btn-options" data-action="increase" href="#">&plus;</a>
                             </div>
                           </div>
                         </div>
@@ -115,7 +140,9 @@
         <div class="row card-resume">
           <div class="offset-6 col-6"><img src="/images/img-card-packbox.svg" alt="" id="imgpackbox" class="float-right" /></div>
 
-
+          <%
+          var totalCmd = (totalBeers + totalOptions + 1.5);
+          %>
           <div class="col-8">
             <div class="row">
               <div class="col-12">
@@ -138,13 +165,13 @@
                 <p>30 minutes</p>
               </div>
               <div class="col-12">
-                <p>12€</p>
+                <p><%=totalBeers%>€</p>
               </div>
               <div class="col-12">
                 <p>1.5€</p>
               </div>
               <div class="col-12">
-                <p>3€</p>
+                <p><%=totalOptions%>€</p>
               </div>
             </div>
           </div>
@@ -155,7 +182,7 @@
           <div class="col-8">
             <h3>Prix Total :</h3></div>
           <div class="col-4 card-options-right">
-            <h3>20€</h3></div>
+            <h3><%=totalCmd%>€</h3></div>
 
         </div>
 
@@ -170,6 +197,13 @@
         </div>
       </div>
     </div>
+
+    <%
+    }
+    %>
+
+
+
     <div id="card-footer">
       <p>© 2018 beerLivery Inc. Privacy Terms</p>
     </div>

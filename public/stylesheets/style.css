@@ -142,6 +142,11 @@ main .main-content .pres-cards-content {
   padding: 0;
   margin: 0;
 }
+#card-empty {
+  border: 1px solid #e2e2e2;
+  background-color: white;
+  padding: 0 0 50px 30px;
+}
 
 #card-background {
   width: 100%;
@@ -149,6 +154,10 @@ main .main-content .pres-cards-content {
   position: absolute;
   background: rgba(244, 144, 12, 0.85);
   background-image: radial-gradient(ellipse at 30% top, #fccd35 15%, transparent 70%);
+}
+
+#card-img-empty {
+  width: 500px;
 }
 
 .main-card {
@@ -244,7 +253,7 @@ main .main-content .pres-cards-content {
   outline: none;
 }
 
-.count-input .incr-btn {
+.count-input .incr-btn, .count-input .incr-btn-options {
   display: block;
   position: absolute;
   width: 37px;
@@ -259,7 +268,7 @@ main .main-content .pres-cards-content {
   text-decoration: none;
 }
 
-.count-input .incr-btn:first-child {
+.count-input .incr-btn:first-child,  .count-input .incr-btn-options:first-child{
   right: auto;
   left: 0;
   top: 46%;

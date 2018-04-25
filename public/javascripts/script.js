@@ -19,6 +19,26 @@ $(".incr-btn").on("click", function (e) {
 
 
 
+$(".incr-btn-options").on("click", function (e) {
+    var $button = $(this);
+    var oldValue = $button.parent().find('.quantity').val();
+    $button.parent().find('.incr-btn-options[data-action="decrease"]').removeClass('inactive');
+    if ($button.data('action') == "increase") {
+        var newVal = parseFloat(oldValue) + 1;
+    } else {
+        // Don't allow decrementing below 1
+        if (oldValue > 0) {
+            var newVal = parseFloat(oldValue) - 1;
+        } else {
+            newVal = 0;
+            $button.addClass('inactive');
+        }
+    }
+    $button.parent().find('.quantity').val(newVal);
+    e.preventDefault();
+});
+
+
 
 
 function findAddress() {
