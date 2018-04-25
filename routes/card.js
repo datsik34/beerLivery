@@ -19,12 +19,14 @@ var optionsData = [
   }
 ];
 
-
 router.get('/', function(req, res, next) {
   if (!req.session.dataCardBeer) {
     req.session.dataCardBeer = [];
-  }else{
-    res.render('card', {cardbeer: req.session.dataCardBeer, optionsData: optionsData});
+  } else {
+    res.render('card', {
+      cardbeer: req.session.dataCardBeer,
+      optionsData: optionsData
+    });
   }
 });
 

@@ -3,7 +3,6 @@ const router = express.Router();
 const stripe = require('stripe')('sk_test_uazSXLD1OuOgwsSwf6r93K8S');
 const mongoose = require('mongoose');
 
-
 /* GET home page. */
 router.get('/', function(req, res, next) {
   if (!req.session.dataCardBeer) {
@@ -27,7 +26,6 @@ router.get('/', function(req, res, next) {
   res.render('index', {cardsData});
 });
 
-
 router.post('/search-address', function(req, res) {
   if (!req.body.address) {
     res.redirect('/')
@@ -45,18 +43,7 @@ router.post('/checkout', function(req, res) {
     totalCmd += req.session.dataCardBeer[i].total * 100;
   }
 */
-  stripe.customers.create({
-    email: req.body.stripeEmail,
-    source: req.body.stripeToken
-  })
-  .then(customer =>
-  stripe.charges.create({
-    amount: 10,
-    description: "Sample Charge",
-    currency: "eur",
-    customer: customer.id
-  }))
-  .then(charge => res.redirect('card'));
+  stripe.customers.create({email: req.body.stripeEmail, source: req.body.stripeToken}).then(customer => stripe.charges.create({amount: 10, description: "Sample Charge", currency: "eur", customer: customer.id})).then(charge => res.redirect('card'));
 });
 
 module.exports = router;

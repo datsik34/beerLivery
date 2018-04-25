@@ -41,24 +41,27 @@
 
             <!-- L I G N E   A R T I C L E -->
             <% for (let i = 0; i < cardbeer.length; i++) { %>
-            <div class="row card-oneitem">
-              <div class="col-5"><%=cardbeer[i].name%></div>
-              <div class="col-3">
-                <!-- input quantité-->
-                <div class="container-fluid card-quantity">
-                  <div class="count-input space-bottom">
-                    <a class="incr-btn" data-action="decrease" href="#">–</a>
-                    <input class="quantity" type="text" name="quantity" value="<%=cardbeer[i].quantity%>" />
-                    <a class="incr-btn" data-action="increase" href="#">&plus;</a>
+              <div class="row card-oneitem">
+                <div class="col-5">
+                  <%=cardbeer[i].name%>
+                </div>
+                <div class="col-3">
+                  <!-- input quantité-->
+                  <div class="container-fluid card-quantity">
+                    <div class="count-input space-bottom">
+                      <a class="incr-btn" data-action="decrease" href="#">–</a>
+                      <input class="quantity" type="text" name="quantity" value="<%=cardbeer[i].quantity%>" />
+                      <a class="incr-btn" data-action="increase" href="#">&plus;</a>
+                    </div>
                   </div>
                 </div>
+                <div class="col-2">
+                  <%=cardbeer[i].price%>€</div>
+                <div class="col-2"><img src="/images/img-card-trash.svg" class="imgtrash" /></div>
               </div>
-              <div class="col-2"><%=cardbeer[i].price%>€</div>
-              <div class="col-2"><img src="/images/img-card-trash.svg" class="imgtrash" /></div>
-            </div>
-            <% if (i < cardbeer.length - 1) { %>
-            <div class="col-12 ligne-card"></div>
-            <% }
+              <% if (i < cardbeer.length - 1) { %>
+                <div class="col-12 ligne-card"></div>
+                <% }
             } %>
           </div>
 
@@ -77,23 +80,23 @@
                 <div class="row">
                   <!-- Option cacahuètes-->
                   <% for (let i = 0; i < optionsData.length; i++) {%>
-                  <div class="col-12">
-                    <div class="row">
-                      <div class="col-4 no-margin-no-padding">
-                        <div class="card-quantity">
-                          <div class="count-input space-bottom">
-                            <a class="incr-btn" data-action="decrease" href="#">–</a>
-                            <input class="quantity" type="text" name="quantity" value="1" />
-                            <a class="incr-btn" data-action="increase" href="#">&plus;</a>
+                    <div class="col-12">
+                      <div class="row">
+                        <div class="col-4 no-margin-no-padding">
+                          <div class="card-quantity">
+                            <div class="count-input space-bottom">
+                              <a class="incr-btn" data-action="decrease" href="#">–</a>
+                              <input class="quantity" type="text" name="quantity" value="1" />
+                              <a class="incr-btn" data-action="increase" href="#">&plus;</a>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                      <div class="col-8 no-margin-no-padding">
-                        <span><%=optionsData[i].name%></span>
+                        <div class="col-8 no-margin-no-padding">
+                          <span><%=optionsData[i].name%></span>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <% } %>
+                    <% } %>
 
                 </div>
               </div>
@@ -110,53 +113,66 @@
       <!-- P A R T I E   R E S U M E  -->
       <div class="col-5">
         <div class="row card-resume">
-          <div class="offset-6 col-6"><img src="/images/img-card-packbox.svg" alt="" id="imgpackbox" class="float-right"/></div>
+          <div class="offset-6 col-6"><img src="/images/img-card-packbox.svg" alt="" id="imgpackbox" class="float-right" /></div>
 
 
           <div class="col-8">
             <div class="row">
-              <div class="col-12"><p>Estimation livraison :</p></div>
-              <div class="col-12"><p>Prix :</p></div>
-              <div class="col-12"><p>Livreur :</p></div>
-              <div class="col-12"><p>Options :</p></div>
+              <div class="col-12">
+                <p>Estimation livraison :</p>
+              </div>
+              <div class="col-12">
+                <p>Prix :</p>
+              </div>
+              <div class="col-12">
+                <p>Livreur :</p>
+              </div>
+              <div class="col-12">
+                <p>Options :</p>
+              </div>
             </div>
           </div>
           <div class="col-4">
             <div class="row card-options-right">
-              <div class="col-12"><p>30 minutes</p></div>
-              <div class="col-12"><p>12€</p></div>
-              <div class="col-12"><p>1.5€</p></div>
-              <div class="col-12"><p>3€</p></div>
+              <div class="col-12">
+                <p>30 minutes</p>
+              </div>
+              <div class="col-12">
+                <p>12€</p>
+              </div>
+              <div class="col-12">
+                <p>1.5€</p>
+              </div>
+              <div class="col-12">
+                <p>3€</p>
+              </div>
             </div>
           </div>
 
           <div class="col-1"></div>
           <div class="col-10 ligne-card"></div>
 
-          <div class="col-8"><h3>Prix Total :</h3></div>
-          <div class="col-4 card-options-right"><h3>20€</h3></div>
+          <div class="col-8">
+            <h3>Prix Total :</h3></div>
+          <div class="col-4 card-options-right">
+            <h3>20€</h3></div>
 
         </div>
 
         <div class="row">
           <div class="offset-8 col-4">
             <form action="/checkout" method="POST">
-              <script
-                src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                data-key="pk_test_IZAko0n3TcNJBDruN4iZ5pYP"
-                data-amount="999"
-                data-name="beerLivery"
-                data-description="X bières pour un montant de Y"
-                data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
-                data-locale="auto"
-                data-currency="eur">
+              <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="pk_test_IZAko0n3TcNJBDruN4iZ5pYP" data-amount="999" data-name="beerLivery" data-description="X bières pour un montant de Y" data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                data-locale="auto" data-currency="eur">
               </script>
             </form>
           </div>
         </div>
       </div>
     </div>
-    <div id="card-footer"><p>© 2018 beerLivery Inc. Privacy Terms</p></div>
+    <div id="card-footer">
+      <p>© 2018 beerLivery Inc. Privacy Terms</p>
+    </div>
   </div>
 
   <script src="/javascripts/script.js"></script>
