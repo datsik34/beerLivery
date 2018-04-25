@@ -244,7 +244,7 @@ main .main-content .pres-cards-content {
   outline: none;
 }
 
-.count-input .incr-btn {
+.count-input .incr-btn, .count-input .incr-btn-options {
   display: block;
   position: absolute;
   width: 37px;
@@ -259,7 +259,7 @@ main .main-content .pres-cards-content {
   text-decoration: none;
 }
 
-.count-input .incr-btn:first-child {
+.count-input .incr-btn:first-child,  .count-input .incr-btn-options:first-child{
   right: auto;
   left: 0;
   top: 46%;

@@ -30,4 +30,10 @@ router.get('/', function(req, res, next) {
   }
 });
 
+router.get('/delete-card', function(req, res){
+  console.log(req.query.position);
+  req.session.dataCardBeer.splice(req.query.position, 1);
+  res.render('card', {cardbeer: req.session.dataCardBeer, optionsData: optionsData});
+});
+
 module.exports = router;
