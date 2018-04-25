@@ -70,10 +70,10 @@
                   <!-- input quantité-->
                   <div class="container-fluid card-quantity">
                     <div class="count-input space-bottom">
-                      <a class="incr-btn" data-action="decrease" href="#">–</a>
+                      <a href="/card/beer-decrease?position=<%=i%>" class="incr-btn" data-action="decrease">–</a>
                       <input class="quantity" type="text" name="quantity" value="<%=cardbeer[i].quantity%>" />
                       <input type="hidden" name="position" value="<%=i%>">
-                      <a class="incr-btn" data-action="increase" href="#">&plus;</a>
+                      <a href="/card/beer-increase?position=<%=i%>" class="incr-btn" data-action="increase">&plus;</a>
                     </div>
                   </div>
                 </div>
@@ -88,6 +88,9 @@
           </div>
 
           <!-- P A R T I E   O P T I O N S -->
+          <%
+          var totalOptions = 0;
+          %>
           <div class="col-10">
             <div class="row card-options">
               <div class="col-12">
@@ -95,29 +98,44 @@
               <div class="col-1"></div>
               <div class="col-10 ligne-card"></div>
               <!-- Option décapsuleur -->
-              <div class="col-12"> <input id="checkBox-decapsuleur" type="checkbox"> Décapsuleur : 2€</div>
+
 
               <div class="col-6">
                 <div class="row">
                   <!-- Option cacahuètes-->
+                  <div class="col-12">
+                    <div class="row">
+                    <div class="col-4 no-margin-no-padding">
+                      <div class="card-quantity">
+                        <div class="count-input space-bottom">
+                          <a href="/card/options-dec-decrease" class="incr-btn-options" data-action="decrease" href="#">–</a>
+                          <input class="quantity" type="text" name="quantity" value="<%=optionsData.decapsuleur.quantity%>" />
+                          <a href="/card/options-dec-increase" class="incr-btn-options" data-action="increase" href="#">&plus;</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-8 no-margin-no-padding">
+                      <span>Décaps' beerLivery (<%=optionsData.decapsuleur.price%>€)</span>
+                    </div>
+                    </div>
+                  </div>
                   <%
-                  var totalOptions = 0;
-                  for (let i = 0; i < optionsData.length; i++) {
-                    totalOptions += optionsData[i].quantity * optionsData[i].price;
+                  for (let i = 0; i < optionsData.supplements.length; i++) {
+                    totalOptions += optionsData.supplements[i].quantity * optionsData.supplements[i].price + (optionsData.decapsuleur.quantity * optionsData.decapsuleur.price)
                     %>
                     <div class="col-12">
                       <div class="row">
                         <div class="col-4 no-margin-no-padding">
                           <div class="card-quantity">
                             <div class="count-input space-bottom">
-                              <a class="incr-btn-options" data-action="decrease" href="#">–</a>
-                              <input class="quantity" type="text" name="quantity" value="<%=optionsData[i].quantity%>" />
-                              <a class="incr-btn-options" data-action="increase" href="#">&plus;</a>
+                              <a href="/card/options-decrease?position=<%=i%>" class="incr-btn-options" data-action="decrease" href="#">–</a>
+                              <input class="quantity" type="text" name="quantity" value="<%=optionsData.supplements[i].quantity%>" />
+                              <a href="/card/options-increase?position=<%=i%>" class="incr-btn-options" data-action="increase" href="#">&plus;</a>
                             </div>
                           </div>
                         </div>
                         <div class="col-8 no-margin-no-padding">
-                          <span><%=optionsData[i].name%></span>
+                          <span><%=optionsData.supplements[i].name%></span>
                         </div>
                       </div>
                     </div>
@@ -209,7 +227,6 @@
     </div>
   </div>
 
-  <script src="/javascripts/script.js"></script>
 </body>
 
 </html>
