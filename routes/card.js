@@ -21,7 +21,7 @@ var optionsData = [
 
 router.get('/', function(req, res, next) {
   if (!req.session.dataCardBeer) {
-    req.session.dataCardBeer = [];
+    res.redirect('/');
   } else {
     res.render('card', {
       cardbeer: req.session.dataCardBeer,
