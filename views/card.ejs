@@ -29,7 +29,6 @@
   </div>
   <div class="container main-card">
 
-
     <!-- P A N I E R   V I D E -->
     <%
     if (!cardbeer.length || cardbeer.length < 1){
@@ -58,10 +57,10 @@
 
                 <!-- L I G N E   A R T I C L E -->
                 <%
-            var totalBeers = 0;
-            for (let i = 0; i < cardbeer.length; i++) {
-              totalBeers += cardbeer[i].price * cardbeer[i].quantity;
-              %>
+                var totalBeers = 0;
+                for (let i = 0; i < cardbeer.length; i++) {
+                  totalBeers += cardbeer[i].price * cardbeer[i].quantity;
+                %>
                   <div class="row card-oneitem">
                     <div class="col-5">
                       <%=cardbeer[i].name%>
@@ -84,21 +83,21 @@
                   <% if (i < cardbeer.length - 1) { %>
                     <div class="col-12 ligne-card"></div>
                     <% }
-            } %>
+              } %>
               </div>
 
               <!-- P A R T I E   O P T I O N S -->
               <%
-          var totalOptions = 0;
-          %>
+              var totalOptions = 0;
+              %>
                 <div class="col-10">
                   <div class="row card-options">
                     <div class="col-12">
-                      <h2>Options</h2></div>
+                      <h2>Options</h2>
+                    </div>
                     <div class="col-1"></div>
                     <div class="col-10 ligne-card"></div>
                     <!-- Option décapsuleur -->
-
 
                     <div class="col-6">
                       <div class="row">
@@ -120,9 +119,9 @@
                           </div>
                         </div>
                         <%
-                  for (let i = 0; i < optionsData.supplements.length; i++) {
-                    totalOptions += optionsData.supplements[i].quantity * optionsData.supplements[i].price
-                    %>
+                        for (let i = 0; i < optionsData.supplements.length; i++) {
+                          totalOptions += optionsData.supplements[i].quantity * optionsData.supplements[i].price
+                        %>
                           <div class="col-12">
                             <div class="row">
                               <div class="col-4 no-margin-no-padding">
@@ -140,8 +139,8 @@
                             </div>
                           </div>
                           <% }
-                          totalOptions += optionsData.decapsuleur.quantity * optionsData.decapsuleur.price %>
-
+                          totalOptions += optionsData.decapsuleur.quantity * optionsData.decapsuleur.price
+                          %>
                       </div>
                     </div>
 
@@ -160,8 +159,8 @@
               <div class="offset-6 col-6"><img src="/images/img-card-packbox.svg" alt="" id="imgpackbox" class="float-right" /></div>
 
               <%
-          var totalCmd = (totalBeers + totalOptions + 1.5);
-          %>
+              var totalCmd = (totalBeers + totalOptions + 1.5);
+              %>
                 <div class="col-8">
                   <div class="row">
                     <div class="col-12">
@@ -220,8 +219,8 @@
         </div>
 
         <%
-    }
-    %>
+        }
+        %>
 
           <div id="card-footer">
             <p>© 2018 beerLivery Inc. Privacy Terms</p>
