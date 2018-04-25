@@ -14,7 +14,7 @@ var options = {
 mongoose.connect('mongodb://beerliveryUser:azerty@ds255329.mlab.com:55329/beerlivery', options, function(err) {
   console.log(err);
 });
-var beerSchema = mongoose.Schema({name: String, type: String, image: String, price: Number});
+var beerSchema = mongoose.Schema({name: String, type: String, image: String, price: Number, quantity: Number});
 var beerModel = mongoose.model('databeers', beerSchema);
 // F I N   B D D
 
