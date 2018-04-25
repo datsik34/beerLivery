@@ -46,7 +46,6 @@ main .main-top {
   background-repeat: no-repeat, no-repeat;
   background-position: right 25% bottom;
   background-size: 500px, auto;
-
   -webkit-box-shadow: 0 5px 13px 0 rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0 5px 13px 0 rgba(0, 0, 0, 0.2);
   box-shadow: 0 5px 13px 0 rgba(0, 0, 0, 0.2);
@@ -87,9 +86,7 @@ h2 {
 
 #index-background-img-beers {
   width: 550px;
-
 }
-
 
 .article {
   border: 1px solid #e2e2e2;
@@ -99,7 +96,7 @@ h2 {
 }
 
 .img-article {
-  height: 230px;
+  height: 220px;
   margin: 40px 0 20px 0;
 }
 
@@ -135,13 +132,15 @@ main .main-content .pres-cards-content {
   font-size: 16px;
 }
 
-                            /*********************************/
+/*********************************/
+
 /************************************** C  A  R  D  **************************************/
 
 .no-margin-no-padding {
   padding: 0;
   margin: 0;
 }
+
 #card-empty {
   border: 1px solid #e2e2e2;
   background-color: white;
@@ -172,7 +171,6 @@ main .main-content .pres-cards-content {
 .card-items {
   margin: 30px 0 30px 0;
   padding: 10px 0 10px 0;
-
   border: 1px solid #e2e2e2;
   background-color: white;
 }
@@ -216,10 +214,9 @@ main .main-content .pres-cards-content {
   padding: 0 0 30px 0;
 }
 
-#card-btn-buy {
-  margin-top: 20px;
+.stripe-button-el {
+  margin: 20px 0 0 0;
   width: 100%;
-  background-color: #F5A338;
 }
 
 #card-footer {
@@ -246,7 +243,6 @@ main .main-content .pres-cards-content {
   border: none;
   background: none;
   text-align: center;
-  /*font-size: 20px;*/
 }
 
 .count-input input:focus {
@@ -268,7 +264,7 @@ main .main-content .pres-cards-content {
   text-decoration: none;
 }
 
-.count-input .incr-btn:first-child,  .count-input .incr-btn-options:first-child{
+.count-input .incr-btn:first-child, .count-input .incr-btn-options:first-child {
   right: auto;
   left: 0;
   top: 46%;
@@ -300,7 +296,9 @@ main .main-content h3 {
   margin: 15px 0 0 0;
 }
 
-/* F O O T E R */
+/*********************************/
+
+/*********************************** F  O  O  T  E  R  ***********************************/
 
 footer {
   background-color: #2a9ad6;
@@ -331,5 +329,3 @@ footer .logo {
   font-style: italic;
   font-weight: bold;
 }
-
-/* T E S T */
