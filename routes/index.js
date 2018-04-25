@@ -34,15 +34,4 @@ router.post('/search-address', function(req, res) {
   }
 });
 
-router.post('/checkout', function(req, res) {
-  /*
-  let totalCmd = 0;
-  for (let i = 0; i < req.session.dataCardBeer.length; i++) {
-    req.session.dataCardBeer[i].total = req.session.dataCardBeer[i].price * req.session.dataCardBeer[i].quantity;
-    totalCmd += req.session.dataCardBeer[i].total * 100;
-  }
-*/
-  stripe.customers.create({email: req.body.stripeEmail, source: req.body.stripeToken}).then(customer => stripe.charges.create({amount: 10, description: "Sample Charge", currency: "eur", customer: customer.id})).then(charge => res.redirect('card'));
-});
-
 module.exports = router;

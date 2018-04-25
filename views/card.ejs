@@ -121,7 +121,7 @@
                   </div>
                   <%
                   for (let i = 0; i < optionsData.supplements.length; i++) {
-                    totalOptions += optionsData.supplements[i].quantity * optionsData.supplements[i].price + (optionsData.decapsuleur.quantity * optionsData.decapsuleur.price)
+                    totalOptions += optionsData.supplements[i].quantity * optionsData.supplements[i].price
                     %>
                     <div class="col-12">
                       <div class="row">
@@ -139,7 +139,9 @@
                         </div>
                       </div>
                     </div>
-                    <% } %>
+                    <% }
+                    totalOptions += optionsData.decapsuleur.quantity * optionsData.decapsuleur.price
+                    %>
 
                 </div>
               </div>
@@ -206,8 +208,14 @@
 
         <div class="row">
           <div class="offset-8 col-4">
-            <form action="/checkout" method="POST">
-              <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="pk_test_IZAko0n3TcNJBDruN4iZ5pYP" data-amount="999" data-name="beerLivery" data-description="X bières pour un montant de Y" data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+            <form action="/card/checkout" method="POST">
+              <script src="https://checkout.stripe.com/checkout.js"
+                class="stripe-button"
+                data-key="pk_test_IZAko0n3TcNJBDruN4iZ5pYP"
+                data-amount="<%=totalCmd*100%>"
+                data-name="beerLivery"
+                data-description="Commande beerLivery"
+                data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
                 data-locale="auto" data-currency="eur">
               </script>
             </form>
