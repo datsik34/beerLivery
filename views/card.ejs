@@ -29,12 +29,13 @@
   </div>
   <div class="container main-card">
 
+
     <!-- P A N I E R   V I D E -->
     <%
     if (!cardbeer.length || cardbeer.length < 1){
     %>
       <div class="row">
-        <div class="offset-3 col-6" id="card-empty">
+        <div class="offset-2 col-8" id="card-empty">
           <h3>Oups ! Ton panier est vide !</h3>
           <a href="/catalogue"><img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/b14dfb26314443.563540ca9b029.gif" id="card-img-empty" alt=""></a>
           <h3>Notre livreur est parti sans bières.</h3>
@@ -80,12 +81,6 @@
                       <%=cardbeer[i].price%>€</div>
                     <a href="/card/delete-card?position=<%=i%>" class="col-2"><img src="/images/img-card-trash.svg" class="imgtrash" /></a>
                   </div>
-                  
-                  <%
-                  for (let i = 0; i < optionsData.supplements.length; i++) {
-                    totalOptions += optionsData.supplements[i].quantity * optionsData.supplements[i].price
-                    %>
-
                   <% if (i < cardbeer.length - 1) { %>
                     <div class="col-12 ligne-card"></div>
                     <% }
@@ -104,6 +99,7 @@
                     <div class="col-10 ligne-card"></div>
                     <!-- Option décapsuleur -->
 
+
                     <div class="col-6">
                       <div class="row">
                         <!-- Option cacahuètes-->
@@ -112,9 +108,9 @@
                             <div class="col-4 no-margin-no-padding">
                               <div class="card-quantity">
                                 <div class="count-input space-bottom">
-                                  <a href="/card/options-dec-decrease" class="incr-btn-options" data-action="decrease">–</a>
+                                  <a href="/card/options-dec-decrease" class="incr-btn-options" data-action="decrease" href="#">–</a>
                                   <input class="quantity" type="text" name="quantity" value="<%=optionsData.decapsuleur.quantity%>" />
-                                  <a href="/card/options-dec-increase" class="incr-btn-options" data-action="increase">&plus;</a>
+                                  <a href="/card/options-dec-increase" class="incr-btn-options" data-action="increase" href="#">&plus;</a>
                                 </div>
                               </div>
                             </div>
@@ -125,7 +121,7 @@
                         </div>
                         <%
                   for (let i = 0; i < optionsData.supplements.length; i++) {
-                    totalOptions += optionsData.supplements[i].quantity * optionsData.supplements[i].price
+                    totalOptions += optionsData.supplements[i].quantity * optionsData.supplements[i].price + (optionsData.decapsuleur.quantity * optionsData.decapsuleur.price)
                     %>
                           <div class="col-12">
                             <div class="row">
@@ -143,14 +139,12 @@
                               </div>
                             </div>
                           </div>
-                          <% }
-                    totalOptions += (optionsData.decapsuleur.quantity * optionsData.decapsuleur.price)
-                    %>
+                          <% } %>
 
                       </div>
                     </div>
 
-                    <div class="col-6" style="margin-top: 20px;">
+                    <div class="col-6">
                       <h2>+1€ unité</h2>
                       <p>*portion : 40g env.</p>
                     </div>
@@ -212,20 +206,15 @@
 
             </div>
 
-        <div class="row">
-          <div class="offset-8 col-4">
-            <form action="/card/checkout" method="POST">
-              <script src="https://checkout.stripe.com/checkout.js"
-                class="stripe-button"
-                data-key="pk_test_IZAko0n3TcNJBDruN4iZ5pYP"
-                data-amount="<%=totalCmd*100%>"
-                data-name="beerLivery"
-                data-description="Commande beerLivery"
-                data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
-                data-locale="auto" data-currency="eur">
-              </script>
-            </form>
-
+            <div class="row">
+              <div class="offset-8 col-4">
+                <form action="/card/checkout" method="POST">
+                  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="pk_test_IZAko0n3TcNJBDruN4iZ5pYP" data-amount="<%=totalCmd%>" data-name="beerLivery" data-description="Commande beerLivery" data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                    data-locale="auto" data-currency="eur">
+                  </script>
+                </form>
+              </div>
+            </div>
           </div>
         </div>
 
