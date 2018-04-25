@@ -3,21 +3,6 @@ const router = express.Router();
 const stripe = require('stripe')('sk_test_uazSXLD1OuOgwsSwf6r93K8S');
 const mongoose = require('mongoose');
 
-var optionsData = [
-  {
-    name: "Cacahuètes",
-    quantity: 0,
-    price: 1
-  }, {
-    name: "Bretzels",
-    quantity: 0,
-    price: 1
-  }, {
-    name: "Chips",
-    quantity: 0,
-    price: 1
-  }
-];
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -42,9 +27,6 @@ router.get('/', function(req, res, next) {
   res.render('index', {cardsData});
 });
 
-router.get('/card', function(req, res, next) {
-  res.render('card', {optionsData});
-});
 
 router.post('/search-address', function(req, res) {
   if (!req.body.address) {
@@ -56,19 +38,20 @@ router.post('/search-address', function(req, res) {
 });
 
 router.post('/checkout', function(req, res) {
+  /*
   let totalCmd = 0;
   for (let i = 0; i < req.session.dataCardBeer.length; i++) {
     req.session.dataCardBeer[i].total = req.session.dataCardBeer[i].price * req.session.dataCardBeer[i].quantity;
     totalCmd += req.session.dataCardBeer[i].total * 100;
   }
-
+*/
   stripe.customers.create({
     email: req.body.stripeEmail,
     source: req.body.stripeToken
   })
   .then(customer =>
   stripe.charges.create({
-    amount: totalCmd,
+    amount: 10,
     description: "Sample Charge",
     currency: "eur",
     customer: customer.id

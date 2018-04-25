@@ -39,7 +39,7 @@
             </div>
             <p><%=beerList[i].name%></p>
             <p><%=beerList[i].type%></p>
-            <form action="/catalogue/add-card" method="POST">
+            <form action="/catalogue" method="POST">
                 <input type="text" name="quantity">
                 <input type="hidden" name="name" value="<%=beerList[i].name%>">
                 <input type="hidden" name="price" value="<%=beerList[i].price%>">

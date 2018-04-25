@@ -40,23 +40,23 @@
 
 
             <!-- L I G N E   A R T I C L E -->
-            <% for (let i = 0; i < 4; i++) { %>
+            <% for (let i = 0; i < cardbeer.length; i++) { %>
             <div class="row card-oneitem">
-              <div class="col-5">kro</div>
+              <div class="col-5"><%=cardbeer[i].name%></div>
               <div class="col-3">
                 <!-- input quantité-->
                 <div class="container-fluid card-quantity">
                   <div class="count-input space-bottom">
                     <a class="incr-btn" data-action="decrease" href="#">–</a>
-                    <input class="quantity" type="text" name="quantity" value="1" />
+                    <input class="quantity" type="text" name="quantity" value="<%=cardbeer[i].quantity%>" />
                     <a class="incr-btn" data-action="increase" href="#">&plus;</a>
                   </div>
                 </div>
               </div>
-              <div class="col-2">1€</div>
+              <div class="col-2"><%=cardbeer[i].price%>€</div>
               <div class="col-2"><img src="/images/img-card-trash.svg" class="imgtrash" /></div>
             </div>
-            <% if (i < 4 - 1) { %>
+            <% if (i < cardbeer.length - 1) { %>
             <div class="col-12 ligne-card"></div>
             <% }
             } %>
