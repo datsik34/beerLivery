@@ -25,8 +25,6 @@ var optionsData = {
   }
 };
 
-
-
 router.get('/', function(req, res, next) {
   if (!req.session.dataCardBeer) {
     res.redirect('/');
@@ -44,7 +42,6 @@ router.get('/delete-card', function(req, res){
   res.render('card', {cardbeer: req.session.dataCardBeer, optionsData: req.session.optionsData});
 });
 
-
 //************* G E S T I O N   Q U A N T I T E  B I E R E S ************//
 router.get('/beer-decrease', function(req, res){
   if (req.session.dataCardBeer[req.query.position].quantity <= 1) {
@@ -59,16 +56,6 @@ router.get('/beer-increase', function(req, res){
   req.session.dataCardBeer[req.query.position].quantity++;
   res.render('card', {cardbeer: req.session.dataCardBeer, optionsData: req.session.optionsData});
 });
-
-
-
-
-
-
-
-
-
-
 
 //************* G E S T I O N   Q U A N T I T E   D E C A P S ************//
 router.get('/options-dec-decrease', function(req, res){
@@ -85,21 +72,6 @@ router.get('/options-dec-increase', function(req, res){
   res.render('card', {cardbeer: req.session.dataCardBeer, optionsData: req.session.optionsData});
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //************* G E S T I O N   Q U A N T I T E   O P T I O N S ************//
 router.get('/options-decrease', function(req, res){
   if (req.session.optionsData.supplements[req.query.position].quantity <= 0) {
@@ -114,6 +86,5 @@ router.get('/options-increase', function(req, res){
   req.session.optionsData.supplements[req.query.position].quantity++;
   res.render('card', {cardbeer: req.session.dataCardBeer, optionsData: req.session.optionsData});
 });
-
 
 module.exports = router;
