@@ -25,31 +25,41 @@ router.get('/', function(req, res, next) {
     res.redirect('/');
   } else {
     totalArticles = 0;
-    for (i = 0; i < req.session.dataCardBeer.length; i ++){
+    for (i = 0; i < req.session.dataCardBeer.length; i++) {
       totalArticles += parseInt(req.session.dataCardBeer[i].quantity);
     }
     beerModel.find(function(err, databeers) {
       res.render('catalogue', {
         beerList: databeers,
-        articles: totalArticles,
+        beerCard: req.session.dataCardBeer,
+        articles: totalArticles
       });
     });
   }
 });
 
 router.post('/', function(req, res, next) {
-  if (req.body.quantity > 0) {
-    req.session.dataCardBeer.push(req.body);
+  if (req.body.quantity >= 0) {
+    let exists = req.session.dataCardBeer.find(function(el) {
+      return el.name === req.body.name;
+    });
+    if (!exists) {
+      req.session.dataCardBeer.push(req.body);
+    } else if (req.body.quantity == 0){
+      req.session.dataCardBeer.splice(req.body.name, 1);
+    } else {
+      exists.quantity = req.body.quantity;
+    }
   }
   totalArticles = 0;
-  for (i = 0; i < req.session.dataCardBeer.length; i ++){
+  for (i = 0; i < req.session.dataCardBeer.length; i++) {
     totalArticles += parseInt(req.session.dataCardBeer[i].quantity);
   }
   beerModel.find(function(err, databeers) {
     res.render('catalogue', {
       beerList: databeers,
       beerCard: req.session.dataCardBeer,
-      articles: totalArticles,
+      articles: totalArticles
     });
   });
 });
