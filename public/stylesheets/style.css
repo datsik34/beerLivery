@@ -252,7 +252,6 @@ main .main-content .pres-cards-content {
 }
 
 /* input quantité*/
-
 .count-input {
   position: relative;
   width: 100%;
@@ -417,6 +416,15 @@ header .card-icon img {
     height: 180px;
     margin: 40px 0 20px 0;
   }
+
+  /********************** C A R D  ************************/
+  .main-card h1 {
+    font-size: 30px;
+  }
+
+  .main-card {
+    padding-top: 80px;
+  }
 }
 
 @media only screen and (max-width: 767px){
@@ -444,6 +452,27 @@ header .card-icon img {
   }
 
   /****************** C A T A L O G U E *******************/
+
+  /********************** C A R D  ************************/
+  .main-card h1 {
+    font-size: 25px;
+  }
+
+  .card-margin {
+    margin-top: -20px;
+  }
+
+  .card-options h2 {
+    font-size: 22px;
+  }
+
+  .card-margin {
+    margin-right: 0px;
+  }
+
+  .card-resume h3 {
+    font-size: 20px;
+  }
 }
 
 @media only screen and (max-width: 422px){
@@ -471,4 +500,9 @@ header .card-icon img {
   }
 
   /****************** C A T A L O G U E *******************/
+
+  /********************** C A R D  ************************/
+  .card-options h2 {
+    font-size: 18px;
+  }
 }

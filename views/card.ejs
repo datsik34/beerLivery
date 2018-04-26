@@ -40,7 +40,7 @@
     if (!cardbeer.length || cardbeer.length < 1){
     %>
       <div class="row">
-        <div class="offset-2 col-8" id="card-empty-404">
+        <div class="offset-md-2 col-md-8" id="card-empty-404">
           <h3>Oups ! Ton panier est vide !</h3>
           <a href="/catalogue"><img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/b14dfb26314443.563540ca9b029.gif" id="card-img-empty" alt=""></a>
           <h3>Notre livreur est parti sans bières.</h3>
@@ -52,14 +52,14 @@
     %>
 
         <div class="row">
-          <div class="col-12">
+          <div class="col-md-12">
             <h1>Votre Panier :</h1>
           </div>
 
           <!-- P A R T I E  A R T I C L E S -->
-          <div class="col-7">
+          <div class="col-md-7 no-margin-no-padding">
             <div class="row card-margin">
-              <div class="col-12 card-items">
+              <div class="col-md-12 card-items">
 
                 <!-- L I G N E   A R T I C L E -->
                 <%
@@ -68,10 +68,10 @@
                   totalBeers += cardbeer[i].price * cardbeer[i].quantity;
                 %>
                   <div class="row card-oneitem">
-                    <div class="col-5">
+                    <div class="col-4 col-md-5">
                       <%=cardbeer[i].name%>
                     </div>
-                    <div class="col-3">
+                    <div class="col-4 col-md-3 no-margin-no-padding">
                       <!-- input quantité-->
                       <div class="container-fluid card-quantity">
                         <div class="count-input space-bottom">
@@ -82,12 +82,12 @@
                         </div>
                       </div>
                     </div>
-                    <div class="col-2">
+                    <div class="col-2 col-md-2 no-margin-no-padding">
                       <%=cardbeer[i].price%>€</div>
-                    <a href="/card/delete-card?position=<%=i%>" class="col-2"><img src="/images/img-card-trash.svg" class="imgtrash" /></a>
+                    <a href="/card/delete-card?position=<%=i%>" class="col-2 col-md-2 no-margin-no-padding"><img src="/images/img-card-trash.svg" class="imgtrash" /></a>
                   </div>
                   <% if (i < cardbeer.length - 1) { %>
-                    <div class="col-12 ligne-card"></div>
+                    <div class="col-md-12 ligne-card"></div>
                     <% }
               } %>
               </div>
@@ -96,41 +96,45 @@
               <%
               var totalOptions = 0;
               %>
-                <div class="col-10">
+                <div class="col-lg-10">
                   <div class="row card-options">
-                    <div class="col-12">
+                    <div class="col-md-12">
                       <h2>Suppléments</h2>
                     </div>
                     <div class="col-1"></div>
                     <div class="col-10 ligne-card"></div>
                     <!-- Option décapsuleur -->
+                    <div class="col-md-12">
+                      <div class="row">
+                        <div class="col-3 no-margin-no-padding">
+                          <div class="card-quantity">
+                            <div class="count-input space-bottom">
+                              <a href="/card/options-dec-decrease" class="incr-btn-options" data-action="decrease" href="#">–</a>
+                              <input class="quantity" type="text" name="quantity" value="<%=optionsData.decapsuleur.quantity%>" />
+                              <a href="/card/options-dec-increase" class="incr-btn-options" data-action="increase" href="#">&plus;</a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-9 no-margin-no-padding">
+                          <span>Décaps' beerLivery (<%=optionsData.decapsuleur.price%>€)</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-1"></div>
+                    <div class="col-10 ligne-card"></div>
 
                     <div class="col-6">
                       <div class="row">
                         <!-- Option cacahuètes-->
-                        <div class="col-12">
-                          <div class="row">
-                            <div class="col-4 no-margin-no-padding">
-                              <div class="card-quantity">
-                                <div class="count-input space-bottom">
-                                  <a href="/card/options-dec-decrease" class="incr-btn-options" data-action="decrease" href="#">–</a>
-                                  <input class="quantity" type="text" name="quantity" value="<%=optionsData.decapsuleur.quantity%>" />
-                                  <a href="/card/options-dec-increase" class="incr-btn-options" data-action="increase" href="#">&plus;</a>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-8 no-margin-no-padding">
-                              <span>Décaps' beerLivery (<%=optionsData.decapsuleur.price%>€)</span>
-                            </div>
-                          </div>
-                        </div>
+
+
                         <%
                         for (let i = 0; i < optionsData.supplements.length; i++) {
                           totalOptions += optionsData.supplements[i].quantity * optionsData.supplements[i].price
                         %>
                           <div class="col-12">
                             <div class="row">
-                              <div class="col-4 no-margin-no-padding">
+                              <div class="col-6 no-margin-no-padding">
                                 <div class="card-quantity">
                                   <div class="count-input space-bottom">
                                     <a href="/card/options-decrease?position=<%=i%>" class="incr-btn-options" data-action="decrease" href="#">–</a>
@@ -139,7 +143,7 @@
                                   </div>
                                 </div>
                               </div>
-                              <div class="col-8 no-margin-no-padding">
+                              <div class="col-6 no-margin-no-padding">
                                 <span><%=optionsData.supplements[i].name%></span>
                               </div>
                             </div>
@@ -160,7 +164,7 @@
             </div>
           </div>
           <!-- P A R T I E   R E S U M E  -->
-          <div class="col-5">
+          <div class="col-md-5">
             <div class="row card-resume">
               <div class="offset-6 col-6"><img src="/images/img-card-packbox.svg" alt="" id="imgpackbox" class="float-right" /></div>
 
@@ -228,9 +232,9 @@
         }
         %>
 
-          <div id="card-footer">
+          <!-- <div id="card-footer">
             <p>© 2018 beerLivery Inc. Privacy Terms</p>
-          </div>
+          </div> -->
   </div>
 
 </body>
