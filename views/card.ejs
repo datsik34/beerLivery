@@ -40,11 +40,13 @@
     if (!cardbeer.length || cardbeer.length < 1){
     %>
       <div class="row">
-        <div class="offset-2 col-8" id="card-empty-404">
+        <div class="offset-2 col-8 text-center" id="card-empty">
           <h3>Oups ! Ton panier est vide !</h3>
-          <a href="/catalogue"><img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/b14dfb26314443.563540ca9b029.gif" id="card-img-empty" alt=""></a>
+          <div class="row">
+            <a class="col-12" href="/catalogue"><img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/b14dfb26314443.563540ca9b029.gif" class="col-12"></a>
+          </div>
           <h3>Notre livreur est parti sans bières.</h3>
-          <div><a href="/catalogue"><h3>Retouner vers le catalogue</h3></a></div>
+          <a href="/catalogue"><h3>Retouner vers le catalogue</h3></a>
         </div>
       </div>
       <%

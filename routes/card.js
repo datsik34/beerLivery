@@ -169,7 +169,21 @@ router.post('/checkout', function(req, res) {
     totalCmd += (totalBeers + 1.5) * 100;
   }
 
-  stripe.customers.create({email: req.body.stripeEmail, source: req.body.stripeToken}).then(customer => stripe.charges.create({amount: totalCmd, description: "Commande beerLivery", currency: "eur", customer: customer.id})).then(charge => res.redirect('/'));
+  stripe.customers.create({
+    email: req.body.stripeEmail,
+    source: req.body.stripeToken})
+    .then(customer =>
+      stripe.charges.create({
+        amount: totalCmd,
+        description: "Commande beerLivery",
+        currency: "eur",
+        customer: customer.id
+      })
+    )
+    .then(charge => {
+      req.session.dataCardBeer = [];
+      res.render('confirm')
+    });
 });
 
 module.exports = router;
