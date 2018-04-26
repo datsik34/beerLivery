@@ -17,13 +17,17 @@ mongoose.connect('mongodb://beerliveryUser:azerty@ds255329.mlab.com:55329/beerli
 var beerSchema = mongoose.Schema({name: String, type: String, image: String, price: Number, quantity: Number});
 var beerModel = mongoose.model('databeers', beerSchema);
 // F I N   B D D
+var totalArticles = 0;
 
 router.get('/', function(req, res, next) {
   if (!req.session.dataCardBeer) {
     res.redirect('/');
   } else {
     beerModel.find(function(err, databeers) {
-      res.render('catalogue', {beerList: databeers});
+      res.render('catalogue', {
+        beerList: databeers,
+        articles: totalArticles,
+      });
     });
   }
 });
@@ -32,10 +36,15 @@ router.post('/', function(req, res, next) {
   if (req.body.quantity > 0) {
     req.session.dataCardBeer.push(req.body);
   }
+  totalArticles = 0;
+  for (i = 0; i < req.session.dataCardBeer.length; i ++){
+    totalArticles += parseInt(req.session.dataCardBeer[i].quantity);
+  }
   beerModel.find(function(err, databeers) {
     res.render('catalogue', {
       beerList: databeers,
-      beerCard: req.session.dataCardBeer
+      beerCard: req.session.dataCardBeer,
+      articles: totalArticles,
     });
   });
 });

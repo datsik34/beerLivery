@@ -25,23 +25,33 @@ var optionsData = {
   }
 };
 
+var totalArticles = 0;
+
 router.get('/', function(req, res, next) {
   if (!req.session.dataCardBeer) {
     res.redirect('/');
   } else {
     req.session.optionsData = optionsData;
+    for (i = 0; i < req.session.dataCardBeer.length; i ++){
+      totalArticles += parseInt(req.session.dataCardBeer[i].quantity);
+    }
     res.render('card', {
       cardbeer: req.session.dataCardBeer,
-      optionsData: req.session.optionsData
+      optionsData: req.session.optionsData,
+      articles: totalArticles,
     });
   }
 });
 
 router.get('/delete-card', function(req, res, next) {
   req.session.dataCardBeer.splice(req.query.position, 1);
+  for (i = 0; i < req.session.dataCardBeer.length; i ++){
+    totalArticles += parseInt(req.session.dataCardBeer[i].quantity);
+  }
   res.render('card', {
     cardbeer: req.session.dataCardBeer,
-    optionsData: req.session.optionsData
+    optionsData: req.session.optionsData,
+    articles: totalArticles,
   });
 });
 
@@ -50,22 +60,27 @@ router.get('/beer-decrease', function(req, res, next) {
   if (req.session.dataCardBeer[req.query.position].quantity <= 1) {
     res.render('card', {
       cardbeer: req.session.dataCardBeer,
-      optionsData: req.session.optionsData
+      optionsData: req.session.optionsData,
+      articles: totalArticles,
     });
   } else {
     req.session.dataCardBeer[req.query.position].quantity--;
+    totalArticles -= 1;
     res.render('card', {
       cardbeer: req.session.dataCardBeer,
-      optionsData: req.session.optionsData
+      optionsData: req.session.optionsData,
+      articles: totalArticles,
     });
   }
 });
 
 router.get('/beer-increase', function(req, res, next) {
   req.session.dataCardBeer[req.query.position].quantity++;
+  totalArticles += 1;
   res.render('card', {
     cardbeer: req.session.dataCardBeer,
-    optionsData: req.session.optionsData
+    optionsData: req.session.optionsData,
+    articles: totalArticles,
   });
 });
 
@@ -74,13 +89,15 @@ router.get('/options-dec-decrease', function(req, res, next) {
   if (req.session.optionsData.decapsuleur.quantity <= 0) {
     res.render('card', {
       cardbeer: req.session.dataCardBeer,
-      optionsData: req.session.optionsData
+      optionsData: req.session.optionsData,
+      articles: totalArticles,
     });
   } else {
     req.session.optionsData.decapsuleur.quantity--;
     res.render('card', {
       cardbeer: req.session.dataCardBeer,
-      optionsData: req.session.optionsData
+      optionsData: req.session.optionsData,
+      articles: totalArticles,
     });
   }
 });
@@ -89,7 +106,8 @@ router.get('/options-dec-increase', function(req, res, next) {
   req.session.optionsData.decapsuleur.quantity++;
   res.render('card', {
     cardbeer: req.session.dataCardBeer,
-    optionsData: req.session.optionsData
+    optionsData: req.session.optionsData,
+    articles: totalArticles,
   });
 });
 
@@ -98,13 +116,15 @@ router.get('/options-decrease', function(req, res, next) {
   if (req.session.optionsData.supplements[req.query.position].quantity <= 0) {
     res.render('card', {
       cardbeer: req.session.dataCardBeer,
-      optionsData: req.session.optionsData
+      optionsData: req.session.optionsData,
+      articles: totalArticles,
     });
   } else {
     req.session.optionsData.supplements[req.query.position].quantity--;
     res.render('card', {
       cardbeer: req.session.dataCardBeer,
-      optionsData: req.session.optionsData
+      optionsData: req.session.optionsData,
+      articles: totalArticles,
     });
   }
 });
@@ -113,7 +133,8 @@ router.get('/options-increase', function(req, res, next) {
   req.session.optionsData.supplements[req.query.position].quantity++;
   res.render('card', {
     cardbeer: req.session.dataCardBeer,
-    optionsData: req.session.optionsData
+    optionsData: req.session.optionsData,
+    articles: totalArticles,
   });
 });
 
