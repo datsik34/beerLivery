@@ -167,10 +167,10 @@ main .main-content .pres-cards-content {
   margin: 0;
 }
 
-#card-empty {
+#card-empty-404 {
   border: 1px solid #e2e2e2;
   background-color: white;
-  padding: 0 0 50px 30px;
+  padding: 0 0 50px 120px;
 }
 
 #card-background {
@@ -183,6 +183,7 @@ main .main-content .pres-cards-content {
 
 #card-img-empty {
   width: 500px;
+  height: 400px;
 }
 
 .main-card {
