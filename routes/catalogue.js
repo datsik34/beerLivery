@@ -45,7 +45,7 @@ router.post('/', function(req, res, next) {
     });
     if (!exists) {
       req.session.dataCardBeer.push(req.body);
-    } else if (req.body.quantity == 0){
+    } else if (req.body.quantity == 0) {
       req.session.dataCardBeer.splice(req.body.name, 1);
     } else {
       exists.quantity = req.body.quantity;
