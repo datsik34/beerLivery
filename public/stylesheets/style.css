@@ -4,7 +4,7 @@ body {
   background-color: #f7f6f6;
 }
 
-/* H E A D E R */
+/************************************** H  E  A  D  E  R  ****************************************/
 
 header {
   height: 64px;
@@ -50,7 +50,7 @@ header .panier {
   font-weight: bold;
 }
 
-/* M A I N   T O P*/
+/*******************************  M  A  I  N    T  O  P  **********************************/
 
 main .main-top {
   height: 480px;
@@ -129,7 +129,9 @@ h2 {
   font-weight: bold;
 }
 
-/* M A I N   C O N T E N T */
+
+/**************************************  M  A  I  N    C  O  N  T  E  N  T   **************************************/
+
 
 main .main-content {
   background-color: #f7f6f6;
@@ -160,7 +162,9 @@ main .main-content .pres-cards-content {
   font-size: 16px;
 }
 
-/*********************************/
+#img-error {
+  width: 550px;
+}
 
 /************************************** C  A  R  D  **************************************/
 
@@ -181,11 +185,6 @@ main .main-content .pres-cards-content {
   position: absolute;
   background: rgba(244, 144, 12, 0.85);
   background-image: radial-gradient(ellipse at 30% top, #fccd35 15%, transparent 70%);
-}
-
-#card-img-empty {
-  width: 500px;
-  height: 400px;
 }
 
 .main-card {
@@ -253,7 +252,7 @@ main .main-content .pres-cards-content {
   bottom: 0;
 }
 
-/* input quantité*/
+/****************************** S  Y  S  T  E  M  E    + / -   C  A  R  D  *********************************/
 
 .count-input {
   position: relative;
@@ -325,8 +324,6 @@ main .main-content h3 {
   margin: 15px 0 0 0;
 }
 
-/*********************************/
-
 /*********************************** F  O  O  T  E  R  ***********************************/
 
 footer {
@@ -359,10 +356,9 @@ footer .logo {
   font-weight: bold;
 }
 
-/************************ R E S P O N S I V E    P O W E R *************************/
-
+/************************ R E S P O N S I V E   9 9 1 P X  *************************/
 @media only screen and (max-width: 991px) {
-  /******************* H E A D E R ********************/
+  /********************* H E A D E R **********************/
   header .logo {
     font-family: 'Changa', sans-serif;
     font-size: 40px;
@@ -378,7 +374,7 @@ footer .logo {
     margin-top: 14px;
     margin-bottom: 14px;
   }
-  /****************** I N D E X *******************/
+  /********************** I N D E X ***********************/
   main .main-top {
     height: 400px;
     padding: 0;
@@ -414,10 +410,17 @@ footer .logo {
   .main-card {
     padding-top: 80px;
   }
+  /******************** F O O T E R  **********************/
+  footer {
+    padding: 20px 0 20px 0;
+  }
+  .ligne {
+    margin: 12px 0 12px 0;
+  }
 }
-
+/************************ R E S P O N S I V E   7 6 7 P X  *************************/
 @media only screen and (max-width: 767px) {
-  /****************** I N D E X *******************/
+  /********************** I N D E X ***********************/
   main .main-top {
     height: 320px;
     padding: 0;
@@ -436,8 +439,7 @@ footer .logo {
   #search-button {
     height: 35px;
   }
-  /****************** C A T A L O G U E *******************/
-  /********************** C A R D  ************************/
+  /********************* C A R D  ***********************/
   .main-card h1 {
     font-size: 25px;
   }
@@ -453,10 +455,20 @@ footer .logo {
   .card-resume h3 {
     font-size: 20px;
   }
+  /******************** F O O T E R  **********************/
+  footer {
+    padding: 10px 0 10px 0;
+  }
+  .ligne {
+    margin: 8px 0 8px 0;
+  }
+  footer .logo {
+    font-size: 30px;
+  }
 }
-
+/************************ R E S P O N S I V E   4 2 2 P X  *************************/
 @media only screen and (max-width: 422px) {
-  /****************** I N D E X *******************/
+  /********************** I N D E X **********************/
   main .main-top h1 {
     font-size: 25px;
     padding-top: 70px;
@@ -475,8 +487,7 @@ footer .logo {
   main .main-content .pres-cards h3 {
     font-size: 18px;
   }
-  /****************** C A T A L O G U E *******************/
-  /********************** C A R D  ************************/
+  /********************** C A R D  *************************/
   .card-options h2 {
     font-size: 18px;
   }

@@ -1,7 +1,5 @@
-<h1><%= message %></h1>
-<h2><%= error.status %></h2>
-<pre><%= error.stack %></pre>
-<!-- <!DOCTYPE html>
+
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
 
   <head>
@@ -30,16 +28,23 @@
     <div id="card-background">
     </div>
     <div class="container main-card">
-      <div class="row">
+      <div class="row text-center">
         <div class="offset-2 col-8" id="card-empty-404">
-          <h3>Wooops. Page introuvable.. fail !</h3>
-          <a href="/catalogue"><img src="https://i.gifer.com/2dvD.gif" id="card-img-empty" alt=""></a>
+          <h1><%= message %></h1>
+          <h2><%= error.status %></h2>
+          <div class="row">
+            <a class="col-12" href="/catalogue"><img src="https://i.gifer.com/2dvD.gif" alt="" class="col-12" id="img-error"></a>
+          </div>
           <h3>Désolé pour la gêne occasionnée</h3>
           <div><a href="/"><h3>Retouner à l'accueil</h3></a></div>
+          <div>
+            <p>Détails</p>
+            <pre><%= error.stack %></pre>
+          </div>
         </div>
       </div>
     </div>
 
   </body>
 
-</html> -->
+</html>
