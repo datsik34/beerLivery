@@ -40,7 +40,7 @@ header .card-icon img {
 
 main .main-top {
   height: 480px;
-  padding: 64px;
+  padding-top: 64px;
   background: rgba(244, 144, 12, 0.85);
   background-image: url("/images/beer_ice_transparent.png"), radial-gradient(ellipse at 30% top, #fccd35 15%, rgba(244, 144, 12, 0.85) 70%);
   background-repeat: no-repeat, no-repeat;
@@ -103,15 +103,14 @@ h2 {
 /* M A I N   C O N T E N T */
 
 main .main-content {
-  height: 400px;
   background-color: #f7f6f6;
+  margin: 70px 0 70px 0;
 }
 
 main .pres-cards {
   background-color: #ffffff;
   border: 1px solid #e2e2e2;
-  height: 300px;
-  margin: 50px 0 50px 0;
+  margin: 0;
   justify-content: center;
 }
 
@@ -126,7 +125,7 @@ hr {
 }
 
 main .main-content .pres-cards-content {
-  height: 214px;
+  height: 165px;
   margin: 0 30px 0 30px;
   padding: 10px 15px 15px 15px;
   font-size: 16px;
@@ -303,7 +302,7 @@ main .main-content h3 {
 footer {
   background-color: #2a9ad6;
   color: white;
-  padding: 64px;
+  padding: 48px 64px 48px 64px;
   margin: 0;
   bottom: 0;
 }
@@ -328,4 +327,120 @@ footer .logo {
   color: white;
   font-style: italic;
   font-weight: bold;
+}
+
+
+/************************ R E S P O N S I V E    P O W E R *************************/
+
+@media only screen and (max-width: 991px) {
+/******************* H E A D E R ********************/
+
+header .logo {
+  font-family: 'Changa', sans-serif;
+  font-size: 40px;
+  color: #2a9ad6;
+  font-style: italic;
+  font-weight: bold;
+}
+
+header a:link, header a:visited, header a:hover, header a:active {
+  text-decoration: none;
+}
+
+header .card-icon img {
+  width: 85px;
+  margin-top: 14px;
+  margin-bottom: 14px;
+}
+
+
+
+  /****************** I N D E X *******************/
+  main .main-top {
+    height: 400px;
+    padding: 0;
+    background-position: right 12% bottom;
+    background-size: 400px, auto;
+  }
+
+  main .pres-cards {
+    margin-bottom: 30px;
+    justify-content: center;
+  }
+
+  main .main-content {
+    background-color: #f7f6f6;
+    margin: 40px 0 20px 0;
+  }
+
+  main .main-content .pres-cards-content {
+    height: 120px;
+    margin: 0 30px 0 30px;
+    padding: 10px 15px 15px 15px;
+    font-size: 16px;
+  }
+
+  /****************** C A T A L O G U E *******************/
+  .article {
+    height: 370px;
+  }
+
+  .img-article {
+    height: 180px;
+    margin: 40px 0 20px 0;
+  }
+}
+
+@media only screen and (max-width: 767px){
+  /****************** I N D E X *******************/
+  main .main-top {
+    height: 320px;
+    padding: 0;
+    background-position: right 6% bottom;
+    background-size: 250px, auto;
+  }
+
+  main .main-top h1 {
+    font-size: 30px;
+    padding-top: 80px;
+    font-weight: bold;
+  }
+
+  #search-bar {
+    width: 300px;
+    height: 35px;
+  }
+
+  #search-button {
+    height: 35px;
+  }
+
+  /****************** C A T A L O G U E *******************/
+}
+
+@media only screen and (max-width: 422px){
+  /****************** I N D E X *******************/
+  main .main-top h1 {
+    font-size: 25px;
+    padding-top: 70px;
+    font-weight: bold;
+  }
+
+  #search-bar {
+    width: 200px;
+    height: 35px;
+  }
+
+  #search-button {
+    height: 35px;
+  }
+
+  main .main-content .pres-cards-content {
+    font-size: 15px;
+  }
+  main .main-content .pres-cards h3 {
+    font-size: 18px;
+  }
+
+  /****************** C A T A L O G U E *******************/
 }
