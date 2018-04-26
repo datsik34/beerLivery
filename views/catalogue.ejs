@@ -55,7 +55,8 @@
                 <input type="hidden" name="name" value="<%=beerList[i].name%>">
                 <input type="hidden" name="price" value="<%=beerList[i].price%>">
                 <span class="rating-bar">
-                <% for (let j = 1; j <= 12; j++) { %>
+                <%
+                for (let j = 1; j <= 12; j++) { %>
                   <a data-id="<%=i%>" data-value="<%=j%>"><img class="b-img" src="/images/beer-empty-160-513.svg"></a>
                 <% } %>
                 </span>
