@@ -25,13 +25,12 @@ var optionsData = {
   }
 };
 
-var totalArticles = 0;
-
 router.get('/', function(req, res, next) {
   if (!req.session.dataCardBeer) {
     res.redirect('/');
   } else {
     req.session.optionsData = optionsData;
+    var totalArticles = 0;
     for (i = 0; i < req.session.dataCardBeer.length; i ++){
       totalArticles += parseInt(req.session.dataCardBeer[i].quantity);
     };

@@ -17,12 +17,17 @@ mongoose.connect('mongodb://beerliveryUser:azerty@ds255329.mlab.com:55329/beerli
 var beerSchema = mongoose.Schema({name: String, type: String, image: String, price: Number, quantity: Number});
 var beerModel = mongoose.model('databeers', beerSchema);
 // F I N   B D D
+
 var totalArticles = 0;
 
 router.get('/', function(req, res, next) {
   if (!req.session.dataCardBeer) {
     res.redirect('/');
   } else {
+    totalArticles = 0;
+    for (i = 0; i < req.session.dataCardBeer.length; i ++){
+      totalArticles += parseInt(req.session.dataCardBeer[i].quantity);
+    }
     beerModel.find(function(err, databeers) {
       res.render('catalogue', {
         beerList: databeers,
