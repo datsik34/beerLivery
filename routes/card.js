@@ -34,7 +34,7 @@ router.get('/', function(req, res, next) {
     req.session.optionsData = optionsData;
     for (i = 0; i < req.session.dataCardBeer.length; i ++){
       totalArticles += parseInt(req.session.dataCardBeer[i].quantity);
-    }
+    };
     res.render('card', {
       cardbeer: req.session.dataCardBeer,
       optionsData: req.session.optionsData,
@@ -45,9 +45,10 @@ router.get('/', function(req, res, next) {
 
 router.get('/delete-card', function(req, res, next) {
   req.session.dataCardBeer.splice(req.query.position, 1);
+  totalArticles = 0;
   for (i = 0; i < req.session.dataCardBeer.length; i ++){
     totalArticles += parseInt(req.session.dataCardBeer[i].quantity);
-  }
+  };
   res.render('card', {
     cardbeer: req.session.dataCardBeer,
     optionsData: req.session.optionsData,
@@ -65,7 +66,10 @@ router.get('/beer-decrease', function(req, res, next) {
     });
   } else {
     req.session.dataCardBeer[req.query.position].quantity--;
-    totalArticles -= 1;
+    totalArticles = 0;
+    for (i = 0; i < req.session.dataCardBeer.length; i ++){
+      totalArticles += parseInt(req.session.dataCardBeer[i].quantity);
+    };
     res.render('card', {
       cardbeer: req.session.dataCardBeer,
       optionsData: req.session.optionsData,
@@ -76,7 +80,10 @@ router.get('/beer-decrease', function(req, res, next) {
 
 router.get('/beer-increase', function(req, res, next) {
   req.session.dataCardBeer[req.query.position].quantity++;
-  totalArticles += 1;
+  totalArticles = 0;
+  for (i = 0; i < req.session.dataCardBeer.length; i ++){
+    totalArticles += parseInt(req.session.dataCardBeer[i].quantity);
+  };
   res.render('card', {
     cardbeer: req.session.dataCardBeer,
     optionsData: req.session.optionsData,
