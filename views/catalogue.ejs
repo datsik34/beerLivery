@@ -49,17 +49,19 @@
               <input type="hidden" name="price" value="<%=beerList[i].price%>">
               <button class="catalogue-btn-add-card">Add</button>
             </form> -->
-            <div class="col-12">
-              <input type="hidden" value="0" id="b<%=i%>">
-              <span class="rating-bar">
+            <form action="/catalogue" method="POST">
+              <div class="col-12">
+                <input type="hidden" value="0" id="b<%=i%>">
+                <span class="rating-bar">
               <% for (let j = 1; j <= 12; j++) { %>
                 <a data-id="<%=i%>" data-value="<%=j%>"><img class="b-img" src="/images/beer-empty-160-513.svg"></a>
               <% } %>
               </span>
-              <span>
+                <span>
                 <input class="beer-quantity" id="val<%=i%>" value="0" disabled></input>
               </span>
-            </div>
+              </div>
+            </form> -->
           </div>
         </div>
         <% } %>
