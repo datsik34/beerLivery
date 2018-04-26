@@ -155,7 +155,7 @@ main .main-content .pres-cards-content {
 #card-empty {
   border: 1px solid #e2e2e2;
   background-color: white;
-  padding: 0 0 50px 30px;
+  padding: 0 0 50px 0px;
 }
 
 #card-background {
