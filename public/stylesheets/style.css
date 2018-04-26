@@ -30,10 +30,22 @@ header a:link, header a:visited, header a:hover, header a:active {
   text-decoration: none;
 }
 
-header .card-icon img {
-  width: 85px;
-  margin-top: 14px;
-  margin-bottom: 14px;
+header .card-icon {
+  background-image: url("/images/card_icon.svg");
+  background-position: right;
+  background-size: cover;
+  background-repeat: no-repeat, no-repeat;
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+
+header .panier{
+  font-family: 'Changa', sans-serif;
+  font-size: 30px;
+  color: #2a9ad6;
+  font-style: italic;
+  font-weight: bold;
 }
 
 /* M A I N   T O P*/
