@@ -22,11 +22,13 @@
         <a href="/" class="col-5 logo">
           <div>beerLivery</div>
         </a>
+
         <a href="/card" class="offset-6 col-1 card-icon">
           <div class="panier">
             <%=articles%>
           </div>
         </a>
+
       </div>
     </div>
   </header>
@@ -34,7 +36,7 @@
   <div class="container text-center" id="background-articles">
     <div class="row">
       <% for (var i = 0; i < beerList.length; i++) { %>
-        <div class="col-4">
+        <div class="col-md-6 col-lg-4">
           <div class="article">
             <img src="https://img.saveur-biere.com/img/p/<%=beerList[i].image%>" alt="" class="img-article">
             <div class="offset-1 col-10">
@@ -59,42 +61,43 @@
     </div>
   </div>
 
+<!-- F  O  O  T  E  R -->
   <footer>
     <div class="container">
       <div class="row">
-        <div class="col-12 logo">beerLivery</div>
+        <div class="col-lg-12 logo">beerLivery</div>
 
-        <div class="col-12 ligne"></div>
+        <div class="col-lg-12 ligne"></div>
 
-        <div class="col-12">
+        <div class="col-lg-12">
           <div class="row">
-            <div class="offset-4 col-4">
+            <div class="col-6 offset-lg-4 col-lg-4">
               <p><a href="#">A propos de beerLivery</a></p>
               <p><a href="#">Devenez livreur</a></p>
               <p><a href="#">Devenez partenaire officiel</a></p>
             </div>
-            <div class="col-4">
+            <div class="col-6 col-lg-4">
               <p><a href="#">Aide</a></p>
               <p><a href="#">FAQ</a></p>
             </div>
           </div>
         </div>
 
-        <div class="col-12 ligne"></div>
+        <div class="col-lg-12 ligne"></div>
 
-        <a class="offset-4 col-8" href="http://s2.quickmeme.com/img/03/03d4e03e48166e1595c783db787bf6adf760e23faaf914f8ace431dd3cfe1bae.jpg">App soon - Come back in 2056</a>
+        <a class="offset-lg-4 col-lg-8" href="http://s2.quickmeme.com/img/03/03d4e03e48166e1595c783db787bf6adf760e23faaf914f8ace431dd3cfe1bae.jpg">App soon - Come back in 2056</a>
 
-        <div class="col-12 ligne"></div>
+        <div class="col-lg-12 ligne"></div>
 
-        <div class="col-12">
+        <div class="col-lg-12">
           <div class="row">
-            <div class="col-4">
+            <div class="col-lg-4">
               <p><a href="#">2018 beerLivery</a></p>
             </div>
-            <div class="col-4">
+            <div class="col-lg-4">
               <p><a href="#">Privacy</a></p>
             </div>
-            <div class="col-4">
+            <div class="col-lg-4">
               <p><a href="#">Terms</a></p>
             </div>
           </div>
