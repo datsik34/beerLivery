@@ -17,11 +17,11 @@
   <header>
     <div class="container-fluid">
       <div class="row">
-        <a href="/catalogue" class="col-lg-5 logo">
+        <a href="/catalogue" class="col-5 logo">
           <div>beerLivery</div>
         </a>
 
-        <div class="offset-6 col-1 card-icon">
+        <div class="col-7 card-icon">
           <div class="panier">
             <%=articles%>
           </div>
@@ -42,9 +42,11 @@
       <div class="row">
         <div class="offset-md-2 col-md-8" id="card-empty-404">
           <h3>Oups ! Ton panier est vide !</h3>
-          <a href="/catalogue"><img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/b14dfb26314443.563540ca9b029.gif" id="card-img-empty" alt=""></a>
+          <div class="row">
+            <a class="col-12" href="/catalogue"><img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/b14dfb26314443.563540ca9b029.gif" class="col-12"></a>
+          </div>
           <h3>Notre livreur est parti sans bières.</h3>
-          <div><a href="/catalogue"><h3>Retouner vers le catalogue</h3></a></div>
+          <a href="/catalogue"><h3>Retouner vers le catalogue</h3></a>
         </div>
       </div>
       <%

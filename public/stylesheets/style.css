@@ -33,14 +33,16 @@ header a:link, header a:visited, header a:hover, header a:active {
 header .card-icon {
   background-image: url("/images/card_icon.svg");
   background-position: right;
-  background-size: cover;
+  background-size: 120px;
   background-repeat: no-repeat, no-repeat;
   display: flex;
+  justify-content: flex-end;
   align-items: center;
   margin-top: 5px;
 }
 
 header .panier{
+  width: 75px;
   font-family: 'Changa', sans-serif;
   font-size: 30px;
   color: #2a9ad6;
@@ -170,7 +172,7 @@ main .main-content .pres-cards-content {
 #card-empty-404 {
   border: 1px solid #e2e2e2;
   background-color: white;
-  padding: 0 0 50px 120px;
+  padding: 0 0 50px 0px;
 }
 
 #card-background {
