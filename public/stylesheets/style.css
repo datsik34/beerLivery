@@ -112,6 +112,21 @@ h2 {
   margin: 40px 0 20px 0;
 }
 
+#background-articles .rating-bar .b-img {
+  height: 30px;
+}
+
+.beer-quantity {
+  border: 0;
+  margin-left: 10px;
+  padding: 5px;
+  width: 40px;
+  text-align: center;
+  background-color: white;
+  font-size: 14px;
+  font-weight: bold;
+}
+
 /* M A I N   C O N T E N T */
 
 main .main-content {
@@ -152,7 +167,7 @@ main .main-content .pres-cards-content {
   margin: 0;
 }
 
-#card-empty {
+#card-empty-404 {
   border: 1px solid #e2e2e2;
   background-color: white;
   padding: 0 0 50px 0px;
@@ -168,6 +183,7 @@ main .main-content .pres-cards-content {
 
 #card-img-empty {
   width: 500px;
+  height: 400px;
 }
 
 .main-card {

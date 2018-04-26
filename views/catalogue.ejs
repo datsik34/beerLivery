@@ -34,7 +34,7 @@
   </header>
 
   <div class="container text-center" id="background-articles">
-    <div class="row">
+    <div class="row container-bieres">
       <% for (var i = 0; i < beerList.length; i++) { %>
         <div class="col-md-6 col-lg-4">
           <div class="article">
@@ -50,10 +50,19 @@
               <%=beerList[i].type%>
             </p>
             <form action="/catalogue" method="POST">
-              <input type="text" name="quantity">
-              <input type="hidden" name="name" value="<%=beerList[i].name%>">
-              <input type="hidden" name="price" value="<%=beerList[i].price%>">
-              <button class="catalogue-btn-add-card">Add</button>
+              <div class="col-12">
+                <input type="hidden" name="quantity" value="0" id="b<%=i%>">
+                <input type="hidden" name="name" value="<%=beerList[i].name%>">
+                <input type="hidden" name="price" value="<%=beerList[i].price%>">
+                <span class="rating-bar">
+                <% for (let j = 1; j <= 12; j++) { %>
+                  <a data-id="<%=i%>" data-value="<%=j%>"><img class="b-img" src="/images/beer-empty-160-513.svg"></a>
+                <% } %>
+                </span>
+                <span>
+                <input class="beer-quantity" id="val<%=i%>" value="0" disabled></input>
+              </span>
+              </div>
             </form>
           </div>
         </div>
@@ -61,7 +70,7 @@
     </div>
   </div>
 
-<!-- F  O  O  T  E  R -->
+  <!-- F  O  O  T  E  R -->
   <footer>
     <div class="container">
       <div class="row">
@@ -105,6 +114,7 @@
       </div>
     </div>
   </footer>
+  <script src="javascripts/script.js"></script>
 </body>
 
 </html>
